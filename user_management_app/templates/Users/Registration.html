@@ -1,0 +1,135 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Registration
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Registration_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="registration-page">
+    <div class="auth-options">
+        <h2 class="auth-title">Sign Up Using These Accounts</h2>
+        {% load socialaccount %}
+        <a href="{% provider_login_url 'google' %}?next=/" class="google-signup">
+            <span class="google-text">Sign Up With Google</span>
+            <img src="{% static 'Images/Login/google_illustrator.png' %}" alt="Google Logo" class="auth-logo">
+        </a>
+        <a href="{% provider_login_url 'github' %}?next=/" class="github-signup">
+            <span class="github-text">Sign Up With GitHub</span>
+            <img src="{% static 'Images/Login/github_illustrator.png' %}" alt="GitHub Icon" class="auth-logo">
+        </a>
+    </div>
+
+    <form method="post" class="registration-form">
+        <h1 class="form-title">Create Your New Account</h1>
+
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% csrf_token %}
+        <!-- Display form-wide errors -->
+        {% if form.non_field_errors %}
+            <div class="form-errors">
+                {% for error in form.non_field_errors %}
+                    <p class="error-text">{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="form-row">
+            <div class="form-column-left">
+                <div class="form-group">
+                    <label for="{{ registration_form.username.id_for_label }}">Username:</label>
+                    <p class="help-text">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</p>
+                    {{ registration_form.username }}
+                    {% if registration_form.username.errors %}
+                        <div class="error-text">
+                            {% for error in registration_form.username.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ registration_form.first_name.id_for_label }}">First Name:</label>
+                    {{ registration_form.first_name }}
+                    {% if registration_form.first_name.errors %}
+                        <div class="error-text">
+                            {% for error in registration_form.first_name.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ registration_form.last_name.id_for_label }}">Last Name:</label>
+                    {{ registration_form.last_name }}
+                    {% if registration_form.last_name.errors %}
+                        <div class="error-text">
+                            {% for error in registration_form.last_name.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ registration_form.email.id_for_label }}">Email:</label>
+                    {{ registration_form.email }}
+                    {% if registration_form.email.errors %}
+                        <div class="error-text">
+                            {% for error in registration_form.email.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="form-column-right">
+                <div class="form-group">
+                    <label for="{{ registration_form.password1.id_for_label }}">Password:</label>
+                    <p class="help-text">
+                        Your password can’t be too similar to your other personal information.<br>
+                        Your password must contain at least 8 characters.<br>
+                        Your password can’t be a commonly used password.<br>
+                        Your password can’t be entirely numeric.
+                    </p>
+                    {{ registration_form.password1 }}
+                    {% if registration_form.password1.errors %}
+                        <div class="error-text">
+                            {% for error in registration_form.password1.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ registration_form.password2.id_for_label }}">Password Confirmation:</label>
+                    <p class="help-text">Enter the same password as before, for verification.</p>
+                    {{ registration_form.password2 }}
+                    {% if registration_form.password2.errors %}
+                        <div class="error-text">
+                            {% for error in registration_form.password2.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="submit-button-wrapper">
+            <button type="submit" class="submit-button">Register</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}

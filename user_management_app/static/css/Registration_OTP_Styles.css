@@ -1,0 +1,80 @@
+/* Styling the form block */
+form {
+    background-color: #fff; /* White background for the form */
+    border-radius: 8px; /* Rounded corners for the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Space inside the form */
+    margin: 0 auto; /* Center the form horizontally */
+    max-width: 90%; /* Set a max-width for the form (90% of the screen width) */
+    width: 400px; /* Default width for larger screens */
+    border: 1px solid #e0e0e0; /* Light border for the form */
+}
+
+/* Styling the form elements */
+form input,
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px; /* Space between elements */
+    padding: 10px; /* Space inside input and button */
+    border: 1px solid #ccc; /* Border for inputs */
+    border-radius: 4px; /* Rounded corners for inputs and button */
+    background-color: #fff; /* White background for inputs */
+}
+
+/* Styling the submit button */
+form button {
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for button text */
+}
+
+form button:hover {
+    background-color: #0056b3; /* Darker button color on hover */
+}
+
+/* Remove extra space around the form */
+form {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Styling the title */
+.otp-title {
+    font-size: 24px; /* Font size for the title */
+    font-weight: 600; /* Font weight for the title */
+    color: #333; /* Text color for the title */
+    margin-bottom: 20px; /* Space below the title */
+    text-align: center; /* Center the title text */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    form {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    form button {
+        font-size: 14px; /* Smaller font size for buttons */
+    }
+
+    .otp-title {
+        font-size: 20px; /* Smaller font size for title */
+    }
+}
+
+@media (max-width: 400px) {
+    form {
+        max-width: 100%; /* Full width for very small screens */
+    }
+
+    form button {
+        font-size: 16px; /* Maintain button font size */
+    }
+
+    .otp-title {
+        font-size: 18px; /* Further reduce title font size */
+    }
+}

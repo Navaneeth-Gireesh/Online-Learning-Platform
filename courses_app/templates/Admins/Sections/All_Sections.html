@@ -1,0 +1,59 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Courses
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Courses/All_Courses_Styles.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<!-- Breadcrumb Navigation Container -->
+<div class="breadcrumb-container">
+    <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb-nav">
+            <li class="breadcrumb-item">
+                <a href="{% url 'all_languages' %}" class="breadcrumb-link">Languages</a>
+            </li>
+            <li class="breadcrumb-item">
+                <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <a href="{% url 'admin_language_course_category_view' course_selected.language.slug %}" class="breadcrumb-link">Categories</a>
+            </li>
+            <li class="breadcrumb-item">
+                <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <a href="{% url 'admin_course_view' course_selected.category.slug %}" class="breadcrumb-link">Courses</a>
+            </li>
+            <li class="breadcrumb-item">
+                <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <span class="breadcrumb-current">Section</span>
+            </li>
+        </ol>
+    </nav>
+</div>
+
+{% if user.is_authenticated and user.is_superuser %}
+    <div class="courses-container">
+        <h2 class="courses-title">{{ course_selected }} Sections</h2>
+        <a href="{% url 'admin_course_section_create' course_selected.slug %}" class="add-course-button">Add A New Section</a>
+        {% for section in course_sections %}
+            <div class="course-card">
+                <div class="course-details">
+                    <h3 class="course-title">{{ section.title }}</h3>
+                    <p class="course-description">Order: {{ section.order }}</p>
+                    <div class="course-actions">
+                        <a href="{% url 'admin_course_section_edit' section.slug %}" class="edit-course-button">Edit</a>
+                        <a href="{% url 'admin_course_sub_section_view' section.slug %}" class="view-course-button">Sub - Sections</a>
+                        <a href="{% url 'admin_course_section_delete' section.slug %}" class="delete-course-button" onclick="return confirm('Are you sure you want to delete?');">Delete</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p class="no-courses-message">No sections available for {{ course_selected }} Course. Create a Section.</p>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% endblock content %}

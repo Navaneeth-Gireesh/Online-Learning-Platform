@@ -1,0 +1,61 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Courses Infos
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Course_Info/All_Course_Info_Styles.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb">
+    <ol class="breadcrumb-nav">
+        <li class="breadcrumb-item">
+            <a href="{% url 'all_languages' %}" class="breadcrumb-link">Languages</a>
+        </li>
+        <li class="breadcrumb-item">
+            <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+            <a href="{% url 'admin_language_course_category_view' course_selected.language.slug %}" class="breadcrumb-link">Categories</a>
+        </li>
+        <li class="breadcrumb-item">
+            <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+            <a href="{% url 'admin_course_view' course_selected.category.slug %}" class="breadcrumb-link">Courses</a>
+        </li>
+        <li class="breadcrumb-item">
+            <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+            <span class="breadcrumb-current">Course Info</span>
+        </li>
+    </ol>
+</nav>
+
+{% if user.is_authenticated and user.is_superuser %}
+    <div class="course-info-container">
+        <h2 class="course-info-title">{{ course_selected.title }} Information</h2>
+        <a href="{% url 'admin_course_info_create' course_selected.slug %}" class="course-info-add-button">Add New Course Information</a>
+        {% for info in course_info %}
+            <div class="course-info-card">
+                <div class="course-info-details">
+                    <h3 class="course-info-order">Order: {{ info.order }}</h3>
+
+                    <p class="course-info-outcomes">Outcome: {{ info.outcomes }}</p>
+
+                    <p class="course-info-status">Offerings: {{ info.offerings }}</p>
+
+                    <div class="course-info-actions">
+                        <a href="{% url 'admin_course_info_edit' info.slug %}" class="course-info-edit-button">Edit</a>
+                        <a href="{% url 'admin_course_info_delete' info.slug %}" class="course-info-delete-button" onclick="return confirm('Are you sure you want to delete?');">Delete</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p class="course-info-no-message">No information available for {{ course_selected.title }}. Create new course information.</p>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% endblock content %}
+

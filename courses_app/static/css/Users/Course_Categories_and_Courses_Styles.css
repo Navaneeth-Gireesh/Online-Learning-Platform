@@ -1,0 +1,437 @@
+/* Page title container */
+.page-title-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Page title */
+.page-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Search form container */
+.search-form-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Search input */
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+/* Search button */
+.search-btn {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Container for the courses */
+.courses-container {
+    width: 1200px; /* Fixed width */
+    margin: 0 auto;
+    padding: 25px;
+    background-color: #f9f9f9; /* Off-white color */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative; /* Needed for absolute positioning of buttons */
+}
+
+/* Category wrapper */
+.category-wrapper {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #f1f1f1; /* Light gray background */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Category title */
+.category-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: left; /* Align category title to the left */
+}
+
+/* Slider container */
+.courses-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Button styles */
+.move-btn {
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+    color: white;
+    border: none;
+    border-radius: 0; /* Square buttons */
+    cursor: pointer;
+    font-size: 24px; /* Adjusted font size for better fit */
+    width: 60px; /* Fixed width */
+    height: var(--button-height, 300px); /* Dynamic height */
+    position: absolute; /* Position buttons absolutely within slider */
+    z-index: 3; /* Ensure button is above other content */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
+}
+
+/* Button positioning */
+.left-btn {
+    left: 0;
+}
+
+.right-btn {
+    right: 0;
+}
+
+/* Show button when hovering directly over it */
+.move-btn:hover {
+    opacity: 1; /* Make the button fully visible */
+}
+
+/* Ensure the height of the buttons matches the height of the course item */
+.courses-list-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Hide default scrollbar */
+.courses-list-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Courses list */
+.courses-list {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease;
+    width: 4800px; /* Fixed width based on the number of items */
+}
+
+/* Individual course item */
+.course-item {
+    width: 300px; /* Fixed width */
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Course image container */
+.course-image-container {
+    position: relative;
+}
+
+/* Course thumbnail */
+.course-thumbnail {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Trending badge */
+.trending-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+/* Course details container */
+.course-details {
+    margin-top: 15px;
+}
+
+/* Course title */
+.course-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.course-title:hover {
+    color: #3498db;
+}
+
+/* Course instructors */
+.course-instructors {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+/* Original and discount price */
+.course-prices {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 8px;
+}
+
+.discount-price {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+/* Buttons container */
+.course-buttons {
+    display: flex;
+    justify-content: space-between; /* Align buttons to the ends */
+    margin-top: 15px;
+    width: 100%; /* Ensure buttons take full container width */
+}
+
+/* Buy Now button */
+.course-buttons .buy-now-btn,
+.course-buttons .view-btn {
+    padding: 6px 10px; /* Smaller padding for the buttons */
+    font-size: 12px; /* Further reduced font size */
+    font-weight: bold;
+    text-align: center;
+    border-radius: 25px; /* Adjusted rounded edges */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1; /* Buttons should take equal space */
+    height: 30px; /* Consistent height for both buttons */
+    text-decoration: none; /* Remove underline */
+    margin-right: 10px; /* Space between buttons */
+    display: flex; /* Flex for centering text */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+}
+
+/* Remove margin from the last button */
+.course-buttons .view-btn {
+    margin-right: 0; /* No margin on the right for the last button */
+}
+
+/* Buy Now button */
+.course-buttons .buy-now-btn {
+    background: linear-gradient(135deg, #3498db, #2980b9); /* Gradient blue */
+    color: white;
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.4); /* Soft shadow */
+}
+
+/* View button */
+.course-buttons .view-btn {
+    background: linear-gradient(135deg, #2ecc71, #27ae60); /* Gradient green */
+    color: white;
+    box-shadow: 0 2px 6px rgba(40, 167, 69, 0.4); /* Soft shadow */
+}
+
+/* Adjust button hover effects */
+.course-buttons .buy-now-btn:hover {
+    background: linear-gradient(135deg, #2980b9, #3498db); /* Reverse gradient on hover */
+    transform: translateY(-1px); /* Lift effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.course-buttons .view-btn:hover {
+    background: linear-gradient(135deg, #27ae60, #2ecc71); /* Reverse gradient on hover */
+    transform: translateY(-1px); /* Lift effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Searched courses container */
+.searched-courses-container {
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 20px; /* Add padding for better spacing */
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Search result title */
+.searched-courses-container h3 {
+    font-size: 26px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: left; /* Align text to the left */
+}
+
+/* Searched course item */
+.searched-course-item {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 15px; /* Padding for inner content */
+    margin-bottom: 20px; /* Spacing between items */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Hover effect for searched course item */
+.searched-course-item:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Slightly increase shadow on hover */
+}
+
+/* Searched course image */
+/* Ensure the thumbnail has relative positioning */
+.searched-course-image {
+    position: relative; /* Make it a positioned ancestor for absolute children */
+}
+
+/* Searched course thumbnail */
+.searched-course-thumbnail {
+    width: 100%;
+    height: 100px; /* Fixed height */
+    border-radius: 8px; /* Rounded edges */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+/* Trending badge for searched course */
+.searched-trending-badge {
+    position: absolute; /* Positioning relative to parent */
+    top: 10px; /* Space from the top */
+    left: 10px; /* Space from the left */
+    background-color: #e74c3c; /* Red background */
+    color: white; /* White text */
+    padding: 5px 10px; /* Padding around text */
+    border-radius: 5px; /* Rounded edges */
+    font-size: 12px; /* Font size */
+    font-weight: bold; /* Bold text */
+    z-index: 1; /* Ensure badge is on top */
+}
+
+
+/* Ensure the thumbnail has relative positioning */
+.searched-course-thumbnail {
+    position: relative; /* Make it a positioned ancestor for absolute children */
+}
+
+
+/* Searched course details */
+.searched-course-details {
+    flex: 1; /* Flex to take remaining space */
+    padding-left: 20px; /* Spacing between image and details */
+}
+
+/* Searched course title */
+.searched-course-title {
+    font-size: 18px; /* Slightly smaller than regular course title */
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 10px; /* Adjusted margins */
+}
+
+/* Searched course instructors */
+.searched-course-instructors {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px; /* Margin below instructors */
+}
+
+/* Searched course prices */
+.searched-course-prices {
+    margin-top: 10px;
+}
+
+/* Original price for searched courses */
+.searched-original-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 8px; /* Spacing between prices */
+}
+
+/* Discount price for searched courses */
+.searched-discount-price {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+/* Searched course buttons */
+.searched-course-buttons {
+    display: flex;
+    justify-content: space-between; /* Align buttons to the ends */
+    margin-top: 10px;
+    width: 30%; /* Ensure buttons take full container width */
+}
+
+/* Buy Now button for searched courses */
+.searched-buy-now-btn {
+    padding: 8px 15px; /* Padding for better touch targets */
+    font-size: 14px; /* Adjust font size */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center text */
+    text-decoration: none;
+    background: linear-gradient(135deg, #3498db, #2980b9); /* Gradient blue */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Rounded edges */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1; /* Take equal space */
+    margin-right: 10px; /* Space before view button */
+}
+
+/* Hover effect for Buy Now button */
+.searched-buy-now-btn:hover {
+    background: linear-gradient(135deg, #2980b9, #3498db); /* Reverse gradient on hover */
+    transform: translateY(-1px); /* Lift effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* View button for searched courses */
+.searched-view-btn {
+    padding: 8px 15px; /* Padding for better touch targets */
+    font-size: 14px; /* Adjust font size */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center text */
+    text-decoration: none;
+    background: linear-gradient(135deg, #2ecc71, #27ae60); /* Gradient green */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Rounded edges */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1; /* Take equal space */
+}
+
+/* Hover effect for View button */
+.searched-view-btn:hover {
+    background: linear-gradient(135deg, #27ae60, #2ecc71); /* Reverse gradient on hover */
+    transform: translateY(-1px); /* Lift effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+

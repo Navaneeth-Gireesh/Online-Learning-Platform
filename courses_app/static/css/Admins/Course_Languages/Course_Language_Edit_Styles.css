@@ -1,0 +1,85 @@
+/* CSS for the Language Edit Page */
+
+/* Container for the entire edit language form */
+.language-create-container {
+    max-width: 400px; /* Restrict the width of the container */
+    margin: 20px auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding inside the container */
+    background-color: #f9f9f9; /* Light background color for the container */
+    border-radius: 8px; /* Round the corners of the container */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    text-align: center; /* Center the text inside the container */
+}
+
+/* Heading for the edit language form */
+.language-create-container h2 {
+    margin-bottom: 20px; /* Space below the heading */
+    font-size: 24px; /* Font size for the heading */
+    color: #333; /* Dark color for the heading text */
+}
+
+/* Form element styling */
+.language-form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    align-items: center; /* Center the form elements */
+}
+
+/* Styling for form field paragraphs */
+.language-form p {
+    margin-bottom: 15px; /* Space between form fields */
+    width: 100%; /* Full width of the container */
+}
+
+/* Label styling */
+.language-form label {
+    font-size: 16px; /* Font size for the labels */
+    color: #555; /* Medium dark color for the label text */
+    margin-bottom: 5px; /* Space below the label */
+    display: block; /* Ensure labels take up the full width */
+}
+
+/* Input field styling */
+.language-form input {
+    width: 100%; /* Full width of the container */
+    padding: 10px; /* Padding inside the input fields */
+    border: 1px solid #ddd; /* Light border around the input fields */
+    border-radius: 4px; /* Round the corners of the input fields */
+    font-size: 14px; /* Font size for the input text */
+}
+
+/* Submit button styling */
+.submit-btn {
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding inside the button */
+    border: none; /* Remove the border */
+    border-radius: 4px; /* Round the corners of the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for the button text */
+    margin-top: 10px; /* Space above the button */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+/* Hover effect for the submit button */
+.submit-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Cancel button styling */
+.btn-secondary {
+    background-color: #6c757d; /* Grey background color */
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline from the link */
+    padding: 10px 20px; /* Padding inside the link */
+    border-radius: 4px; /* Round the corners of the link */
+    font-size: 16px; /* Font size for the link text */
+    display: inline-block; /* Make the link behave like a button */
+    margin-top: 10px; /* Space above the cancel button */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+/* Hover effect for the cancel button */
+.btn-secondary:hover {
+    background-color: #5a6268; /* Darker grey on hover */
+}

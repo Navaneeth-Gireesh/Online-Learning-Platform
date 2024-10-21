@@ -1,0 +1,136 @@
+/* General container styling */
+.container {
+    max-width: 1200px; /* Adjust the max width as needed */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add some padding around the container */
+}
+
+/* Expert advice block styling */
+.expert-advice-block {
+    background-color: #ffffff; /* White background for clarity */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 30px; /* Padding inside the block */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    text-align: center; /* Center text */
+}
+
+/* Title styling */
+.expert-advice-title {
+    font-size: 28px; /* Title font size */
+    font-weight: bold; /* Bold font weight */
+    color: #333; /* Darker text color */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+/* Description styling */
+.expert-advice-description {
+    font-size: 18px; /* Description font size */
+    color: #666; /* Lighter text color */
+    margin-bottom: 20px; /* Space below the description */
+}
+
+/* Expert advice content styling */
+.expert-advice-content {
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-start; /* Align items to the top */
+}
+
+/* Expert advice image styling */
+.expert-advice-image {
+    flex: 1; /* Allow image to take up available space */
+    text-align: center; /* Center align the image */
+    margin-right: 20px; /* Space between image and form */
+}
+
+.expert-advice-image img {
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+/* Expert advice form styling */
+.expert-advice-form {
+    flex: 1; /* Allow form to take up available space */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+}
+
+/* Left and Right Form Styling */
+.form-left,
+.form-right {
+    width: 100%; /* Set to 100% to stack properly */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements */
+    margin-bottom: 20px; /* Space below each section */
+}
+
+.form-right {
+    align-items: flex-start; /* Align right side fields to the left */
+}
+
+/* Form group styling */
+.form-group {
+    width: 100%; /* Full width for each input */
+    display: flex; /* Flexbox for input and label */
+    flex-direction: column; /* Stack label above input */
+    align-items: center; /* Center align label and input */
+}
+
+/* Input field styling */
+input[type="text"],
+input[type="email"],
+select {
+    padding: 10px; /* Padding inside the input fields */
+    margin-top: 5px; /* Space above each input */
+    width: 100%; /* Full width of the parent */
+    border: 1px solid #ccc; /* Border for input fields */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+}
+
+/* Button styling */
+button {
+    background-color: #007bff; /* Primary button color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    padding: 12px 20px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Button text size */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    align-self: center; /* Center button in the main container */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .expert-advice-content {
+        flex-direction: column; /* Stack vertically on smaller screens */
+    }
+
+    .expert-advice-image {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 20px; /* Add margin below the image */
+    }
+
+    .container {
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+
+    .expert-advice-title {
+        font-size: 24px; /* Smaller title font size */
+    }
+
+    .expert-advice-description {
+        font-size: 16px; /* Smaller description font size */
+    }
+
+    button {
+        width: 100%; /* Full width button on smaller screens */
+    }
+}

@@ -1,0 +1,29 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+User Edit
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/User_Edit_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="user-edit-wrapper">
+    <div class="user-edit-box">
+        <h2 class="user-edit-title">Edit User Profile</h2>
+        <h4 class="user-edit-username">Username: {{selected_user}}</h4>
+        <form class="user-edit-form" action="" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{user_edit_form.as_p}}
+            </div>
+            <button class="btn-save" type="submit">Save Changes</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+
+
+

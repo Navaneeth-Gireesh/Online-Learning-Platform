@@ -1,0 +1,35 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Expert Advice
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/consultation_styles.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<div class="container">
+    <div class="expert-advice-block">
+        <h2 class="expert-advice-title">Talk To Our Experts</h2>
+        <p class="expert-advice-description">And Select the Best Courses For You</p>
+        <div class="expert-advice-content">
+            <div class="expert-advice-image">
+                <img src="{% static 'Images/customer_care.png' %}" alt="Expert Image">
+            </div>
+            <div class="expert-advice-form">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ expert_advice_form.as_p }}
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block script %}
+{% endblock script %}
+{% endblock content %}

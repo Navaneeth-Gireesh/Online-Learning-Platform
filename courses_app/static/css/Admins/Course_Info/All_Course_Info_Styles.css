@@ -1,0 +1,197 @@
+/* Wrapper for all course info */
+.course-info-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+/* Title of the section */
+.course-info-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Button to add new course info */
+.course-info-add-button {
+    display: block;
+    width: 220px;
+    margin: 0 auto 30px;
+    padding: 12px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #28a745;
+    text-align: center;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.course-info-add-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Individual course info card */
+.course-info-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.course-info-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+/* Course info details */
+.course-info-details {
+    flex: 2;
+}
+
+/* Course order title */
+.course-info-order {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Shared styles for outcomes and offerings */
+.course-info-outcomes,
+.course-info-offerings {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Course status */
+.course-info-status {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Action buttons */
+.course-info-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.course-info-actions a {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.course-info-edit-button {
+    background-color: #007bff;
+}
+
+.course-info-edit-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.course-info-delete-button {
+    background-color: #dc3545;
+}
+
+.course-info-delete-button:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+/* No course info message */
+.course-info-no-message {
+    font-size: 1.2rem;
+    color: #0bf022;
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+/* Breadcrumb navigation container */
+.breadcrumb-nav {
+    margin-bottom: 20px;
+    font-size: 16px;
+    padding: 10px 0;
+    background: linear-gradient(to right, #f9f9f9, #eaeaea); /* Subtle gradient background */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Breadcrumb navigation container */
+.breadcrumb-nav {
+    margin-bottom: 20px;
+    font-size: 16px;
+    padding: 10px 20px; /* Added padding for better spacing */
+    background: linear-gradient(to right, #f9f9f9, #eaeaea); /* Subtle gradient background */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    display: flex;
+    flex-wrap: wrap; /* Wrap items if needed */
+    align-items: center; /* Center items vertically */
+}
+
+/* Breadcrumb item container */
+.breadcrumb-item {
+    display: flex;
+    align-items: center; /* Center text vertically */
+    margin: 0; /* Remove margin for list items */
+}
+
+/* Style for breadcrumb links */
+.breadcrumb-link {
+    color: #007bff; /* Blue color for links */
+    text-decoration: none;
+    font-weight: 500; /* Slightly bold for better visibility */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and transform transition */
+}
+
+.breadcrumb-link:hover {
+    color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Separator between breadcrumb links */
+.breadcrumb-separator {
+    color: #999; /* Light gray color for separators */
+    margin: 0 8px; /* Space between links and separator */
+    font-weight: 300; /* Lighter weight for separators */
+}
+
+/* Current page breadcrumb */
+.breadcrumb-current {
+    color: #333; /* Darker color for current page */
+    font-weight: 600; /* Bold for emphasis */
+    text-transform: capitalize; /* Capitalize current page text */
+    pointer-events: none; /* Prevent interaction with the current page */
+}
+
+/* Optional: Add a subtle hover effect to the breadcrumb container */
+.breadcrumb-nav:hover {
+    background: linear-gradient(to right, #f9f9f9, #e0e0e0); /* Slightly darker gradient on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+}
+

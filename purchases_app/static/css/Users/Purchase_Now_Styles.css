@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.coupon-container {
+    max-width: 400px; /* Set a max width for the container */
+    margin: 40px auto; /* Center the container */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff; /* Set a white background for better contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.course-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #4CAF50; /* Change color to match the submit button */
+}
+
+.coupon-header {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #555; /* Slightly darker gray */
+}
+
+.coupon-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.coupon-input {
+    flex: 1;
+    padding: 12px; /* Increased padding for better touch area */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s; /* Smooth border color change */
+}
+
+.coupon-input:focus {
+    outline: none; /* Remove default outline */
+    border-color: #4CAF50; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Add shadow for focus */
+}
+
+.coupon-submit {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.coupon-submit:hover {
+    background-color: #45a049; /* Darker green */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+.coupon-link {
+    display: block; /* Make it a block link */
+    margin-top: 15px; /* Space above */
+    font-size: 14px;
+    color: #007BFF; /* Blue color for the link */
+    text-align: center; /* Center the link */
+    text-decoration: none; /* Remove underline */
+}
+
+.coupon-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.coupon-info {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #777; /* Lighter gray for info text */
+    text-align: center; /* Center the info text */
+}

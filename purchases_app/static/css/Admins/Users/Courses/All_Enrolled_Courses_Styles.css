@@ -1,0 +1,103 @@
+/* Title Styling */
+.page-title {
+    font-size: 28px;
+    color: #1A237E;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Section Title Styling */
+.section-title {
+    font-size: 24px;
+    color: #3949AB;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Table Container */
+.table-container {
+    width: auto;
+    margin: 0 auto;
+    background-color: #E8EAF6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    overflow-x: auto;
+    max-width: 1200px;
+}
+
+/* Table Styling */
+.table-container-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    color: #3949AB;
+}
+
+.table-container-table thead {
+    background-color: #3949AB;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.table-container-table th, .table-container-table td {
+    padding: 12px 20px;
+    border-bottom: 2px solid #C5CAE9;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.table-container-table th {
+    font-weight: 600;
+}
+
+.table-container-table tbody tr {
+    background-color: #FFFFFF;
+}
+
+.table-container-table tbody tr:nth-child(even) {
+    background-color: #E8EAF6;
+}
+
+.table-container-table tbody tr:hover {
+    background-color: #C5CAE9;
+    transition: background-color 0.3s ease;
+}
+
+/* Action Button Styling */
+.action-btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.go-back-btn {
+    background-color: #1E88E5;
+}
+
+.go-back-btn:hover {
+    background-color: #1565C0;
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Center the Go Back Button */
+.action-btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* General Action Button Hover */
+.action-btn:hover {
+    opacity: 0.9;
+}

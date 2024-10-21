@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSphere | {% block title %} {% endblock title %}</title>
+    {% block style %} {% endblock style %}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/base_styles.css' %}">
+</head>
+<body>
+
+    <!-- Loading Overlay -->
+    <div id="loader" class="loader"></div>
+
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <a href="/"><img src="{% static 'images/logo.png' %}" alt="EduSphere Logo"></a>
+                </div>
+
+                <!-- Admin Dashboard  -->
+                <nav class="auth-nav">
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'user_languages_view' %}" class="btn" >Home</a>
+                    {% else %}
+                        <a href="{% url 'index' %}" class="btn" >Home</a>              
+                    {% endif %}
+                    {% if user.is_authenticated and user.is_superuser %}
+                        <a href="{% url 'all_languages' %}" class="btn" >Courses</a>
+                        <a href="{% url 'admin_coupons_view' %}" class="btn" >Coupons</a>
+                        <a href="{% url 'all_users' %}" class="btn">Users</a>
+                    {% endif %}
+
+                    {% if user.is_authenticated and user.is_active and not user.is_superuser and not user.is_staff %}
+                    <a href="{% url 'user_my_learnings' %}" class="btn" >My Learnings</a>
+                {% endif %}
+                    
+                    {% if user.is_authenticated %}
+                    <div class="dropdown">
+                        <a href="{% url 'profile_view' %}"><button class="dropdown-btn">Hi, {{user.username}}</button></a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'profile_view' %}">Profile</a>
+                            <a href="{% url 'user_logout' %}">Logout</a>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="dropdown">
+                        <a href="#"><button class="dropdown-btn">Account</button></a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'user_registration' %}">Register</a>
+                            <a href="{% url 'user_login' %}" >Login</a>
+                            </div>
+                        </div>
+                    {% endif %}
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+{% block content %}
+<!-- Content will be inserted here -->
+{% endblock %}
+
+
+<!-- Footer -->
+
+<footer>
+    <div class="container footer-container">
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:support@edusphere.com">support@edusphere.com</a></p>
+            <p>Phone: +1 234 567 890</p>
+            <p>Address: 123 Learning Lane, Education City, ED 45678</p>
+        </div>
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <a href="https://www.facebook.com/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/tweet_nav_" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/insta.nav_/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/navaneeth2002/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    <div class="container footer-bottom">
+        <p>&copy; 2024 EduSphere. All rights reserved.</p>
+    </div>
+</footer>
+
+{% block script %}
+<script src="{% static 'js/base_script.js' %}"></script>
+{% endblock script %}
+</body>
+</html>

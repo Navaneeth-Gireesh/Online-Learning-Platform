@@ -1,0 +1,25 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Quiz Create
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Courses/Course_Create_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+{% if user.is_authenticated and user.is_superuser %}
+    <div class="language-create-container">
+        <h2>Create a New Quiz</h2>
+        <form method="post" class="language-form">
+            {% csrf_token %}
+            {{ quiz_create_form.as_p }}
+            <button type="submit" class="submit-btn">Add</button>
+        </form>
+    </div>
+{% endif %}
+
+{% endblock content %}

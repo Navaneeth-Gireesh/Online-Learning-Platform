@@ -1,0 +1,236 @@
+.custom-login-container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    margin: 0; /* Ensure no margins */
+    padding: 0; /* Ensure no padding */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.custom-login-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1200px; /* Optional: Adjust max-width as needed */
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.custom-login-image-section {
+    flex: 1;
+    background-color: #e0e0e0;
+}
+
+.custom-login-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.custom-login-form-section {
+    flex: 1.5;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+.custom-google-login, .custom-github-login {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 14px; /* Smaller font size */
+    transition: background-color 0.3s ease;
+}
+
+.custom-google-login {
+    background-color: #fff;
+    color: #333;
+}
+
+.custom-google-login:hover {
+    background-color: #f1f1f1;
+}
+
+.custom-github-login {
+    background-color: #000;
+    color: #fff;
+}
+
+.custom-github-login:hover {
+    background-color: #333;
+}
+
+.custom-google-text, .custom-github-text {
+    margin-right: 8px; /* Reduced margin */
+}
+
+.custom-google-icon, .custom-github-icon {
+    width: 20px; /* Smaller icon */
+    height: 20px; /* Smaller icon */
+}
+
+.custom-login-subtitle {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.custom-login-divider {
+    font-size: 14px;
+    color: #888;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.custom-message-container {
+    margin-bottom: 20px;
+}
+
+.custom-message-box {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.custom-message-box.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.custom-message-box.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.custom-login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ensure form takes full width */
+    align-items: center; /* Center form elements */
+}
+
+.custom-input-group {
+    margin-bottom: 15px;
+    width: 100%; /* Ensure full width of input group */
+    max-width: 300px; /* Limit the maximum width */
+}
+
+.custom-input-label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.custom-input-field {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.small-input {
+    max-width: 300px; /* Limit the maximum width */
+}
+
+.custom-submit-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Full width of the container */
+    max-width: 200px; /* Limit maximum width */
+}
+
+.custom-submit-button:hover {
+    background-color: #0056b3;
+}
+.custom-forgot-password {
+    color: #007bff; /* Color matching the primary button */
+    text-decoration: none; /* Remove underline */
+    font-size: 14px;
+    margin-top: -5px; /* Reduce space between the password input and the link */
+    margin-bottom: 15px; /* Space from the submit button */
+    display: block; /* Ensure it occupies its own line */
+    transition: color 0.3s ease;
+    text-align: left; /* Align to the left */
+}
+
+.custom-forgot-password:hover {
+    color: #0056b3; /* Darker shade on hover */
+}
+
+@media (max-width: 768px) {
+    .custom-login-wrapper {
+        flex-direction: column; /* Stack the image and form sections */
+        max-width: 100%; /* Allow full width on smaller screens */
+    }
+
+    .custom-login-image-section {
+        height: 200px; /* Fixed height for smaller screens */
+    }
+
+    .custom-login-form-section {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    .custom-input-group, .custom-submit-button {
+        max-width: 90%; /* Allow more width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-login-image-section {
+        display: none; /* Hide the image section on very small screens */
+    }
+
+    .custom-login-form-section {
+        padding: 10px; /* Further reduce padding */
+    }
+
+    .custom-login-wrapper {
+        box-shadow: none; /* Remove shadow for simplicity */
+    }
+
+    .custom-submit-button {
+        max-width: 100%; /* Full width for buttons */
+    }
+
+    .custom-google-login, .custom-github-login {
+        font-size: 12px; /* Smaller font size for buttons */
+    }
+
+    .custom-login-subtitle {
+        font-size: 16px; /* Smaller subtitle */
+    }
+
+    .custom-login-divider {
+        font-size: 12px; /* Smaller divider text */
+    }
+
+    .custom-input-label {
+        font-size: 12px; /* Smaller label */
+    }
+
+    .custom-input-field {
+        padding: 6px; /* Smaller padding for inputs */
+        font-size: 12px; /* Smaller font size for inputs */
+    }
+
+    .custom-forgot-password {
+        font-size: 12px; /* Smaller font size for link */
+    }
+}

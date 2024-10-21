@@ -1,0 +1,126 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Course
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/Users/Course_Data_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+<div class="content-wrapper">
+    <div class="left-column">
+        <h1 class="course-title">{{ course_selected.title }}</h1>
+
+        <video class="video-player" controls 
+               poster="" 
+               controlslist="nodownload">
+            <source id="videoSource" src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <h2 class="section-header">About</h2>
+        <p class="course-description">{{ course_selected.description }}</p>
+
+        <h2 class="section-header">Outcomes</h2>
+        <div class="outcomes-container">
+            {% for information in course_information %}
+                <p class="outcomes">⭐ {{ information.outcomes }}</p>
+            {% endfor %}
+        </div>
+
+        <h2 class="section-header">Offerings</h2>
+        <div class="offerings-container">
+            {% for information in course_information %}
+                <p class="offerings">🔵 {{ information.offerings }}</p>
+            {% endfor %}
+        </div>
+
+        <!-- <div class="certificate-container">
+            <h4>Get Certified</h4>
+            <p>Once you have completed the course, you can download your certificate.</p>
+            {% if course_selected.title in user_purchases %}
+            <a class="button download-certificate" href="">Download Certificate</a>
+            {% endif %}
+        </div> -->
+    </div>
+
+    <div class="right-column">
+        <div class="lessons-box">
+            <h3 class="lessons-title">Lessons</h3>
+            <h4 class="trailers-title" onclick="toggleTrailers()">Trailers <span class="arrow">&#9660;</span></h4>
+            <div class="trailers-container" style="display:none;">
+                {% for trailer in course_trailers %}
+                    <p class="trailer-title link" onclick="loadVideo('{{ trailer.video_file }}', '{{ trailer.thumbnail }}')">
+                        <img src="{% static 'Images/Video.png' %}" alt="">
+                        {{ trailer.title }} 
+                    </p>
+                {% endfor %}
+            </div>
+
+            <div class="sections-container">
+                {% for section in course_sections %}
+                    <div class="section">
+                        <p class="section-title" onclick="toggleContent(this)">
+                            {{ section.title }} <span class="arrow">&#9660;</span>
+                        </p>
+                        <div class="sub-sections" style="display:none;">
+                            {% for sub_section in course_sub_sections %}
+                                {% if sub_section.section.id == section.id %}
+                                    <p class="sub-section-title" onclick="toggleSubContent(this)">
+                                        {{ sub_section.title }} <span class="arrow">&#9660;</span>
+                                    </p>
+                                    {% if sub_section.course.title in user_purchases or request.user.is_superuser or request.user.is_staff %}
+                                    <div class="quizzes" style="display:none;">
+                                        {% for quiz in course_quiz %}
+                                            {% if quiz.sub_section.id == sub_section.id %}
+                                                <a class="link quiz-link" href="{% url 'user_quiz_home_view' quiz.slug %}">
+                                                    <img src="{% static 'Images/Quiz.png' %}" alt="Quiz">
+                                                    <span class="quiz-title">{{ quiz.title }}</span>
+                                                </a>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+
+                                    <div class="videos" style="display:none;">
+                                        {% for video in course_videos %}
+                                            {% if video.sub_section.id == sub_section.id %}
+                                                <a class="link video-link" href="javascript:void(0)" onclick="loadVideo('{{ video.video_file }}', '{{ video.thumbnail }}')">
+                                                    <img src="{% static 'Images/Video.png' %}" alt="{{ video.title }}">
+                                                    <span class="video-title">{{ video.title }}</span>
+                                                </a>
+
+                                                <div class="documents">
+                                                    {% for document in course_documents %}
+                                                        {% if document.video.sub_section.id == sub_section.id and document.video.id == video.id %}
+                                                            <a class="link document-link" target="_blank" href="{{ document.document }}">
+                                                                <img src="{% static 'Images/Document.png' %}" alt="Document">
+                                                                <span class="document-title">{{ document.title }}</span>
+                                                            </a>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% block script %}
+<script src="{% static 'js/Course_Data.js' %}"></script>
+{% endblock script %}
+
+{% endblock content %}

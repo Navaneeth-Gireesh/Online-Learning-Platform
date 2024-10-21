@@ -1,0 +1,53 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Category
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Course_Categories/All_Course_Categories_Styles.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<div class="breadcrumb-container">
+    <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb-nav">
+            <li class="breadcrumb-item">
+                <a href="{% url 'all_languages' %}" class="breadcrumb-link">Languages</a>
+            </li>
+            <li class="breadcrumb-item">
+                <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <span class="breadcrumb-current">Categories</span>
+            </li>
+        </ol>
+    </nav>
+</div>
+{% if user.is_authenticated and user.is_superuser %}
+    <div class="course-languages-wrapper">
+        <h2 class="languages-title">{{ language_selected.language }} Categories</h2>
+        <a href="{% url 'admin_course_category_create' language_selected.slug %}" class="add-languages-link">Add A New Category</a>
+        {% for category in course_categories %}
+            <a href="#" class="languages-card-link">
+                <div class="languages-card">
+                    <h3 class="languages-name">{{ category.name }}</h3>
+                    <p class="category-description">{{ category.description }}</p>
+                    <div class="languages-actions">
+                        <a href="{% url 'admin_course_category_edit'  category.slug %}" class="edit-languages-link">Edit</a>
+                        <a href="{% url 'admin_course_view' category.slug %}" class="view-languages-link">View</a>
+                        <a href="{% url 'admin_course_category_delete' category.slug %}" class="delete-languages-link" onclick="return confirm('Are you sure you want to Delete?');">Delete</a>
+                    </div>
+                </div>
+            </a>
+        {% empty %}
+            <h5 class="no-category-message">No Category for {{ language_selected.language }} language. Create a Category</h5>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% endblock content %}
+
+
+
+

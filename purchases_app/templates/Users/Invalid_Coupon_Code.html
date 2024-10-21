@@ -1,0 +1,25 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Purchase
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/Users/Invalid_Coupon_Code_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="coupon-error-container">
+    <h2 class="coupon-error-heading">Invalid Coupon Code</h2>
+    <p class="coupon-error-message">You have entered an invalid coupon code.</p>
+    <p class="coupon-error-instructions">
+        If you think it's not invalid, check for typos or contact us if the issue persists.
+    </p>
+    <a class="coupon-error-back-link" href="{% url 'user_languages_view' %}">Go Back</a>
+</div>
+{% block script %}
+
+{% endblock script %}
+{% endblock content %}
+

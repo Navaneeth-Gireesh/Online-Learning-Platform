@@ -1,0 +1,68 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Coupons
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/Admins/Coupons_View_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+<h2 class="coupons-header">Coupons</h2>
+<a href="{% url 'admin_coupon_create' %}" class="create-coupon-btn">Create a New Coupon</a>
+
+<div class="coupons-stats">
+    <div class="coupons-total">
+        <h4 class="coupons-total-header">Total Coupons</h4>
+        <p class="coupons-total-value">{{ coupon_count }}</p>
+    </div>
+    <div class="coupons-active">
+        <h4 class="coupons-active-header">Active Coupons</h4>
+        <p class="coupons-active-value">{{ active_coupons }}</p>
+    </div>
+</div>
+
+<table class="coupons-table">
+    <thead class="coupons-table-head">
+        <tr class="coupons-table-row-header">
+            <th class="coupons-table-header code-header">Code</th>
+            <th class="coupons-table-header valid-from-header">Valid From</th>
+            <th class="coupons-table-header valid-to-header">Valid To</th>
+            <th class="coupons-table-header usage-count-header">Usage Count</th>
+            <th class="coupons-table-header usage-limit-header">Usage Limit</th>
+            <th class="coupons-table-header status-header">Status</th>
+            <th class="coupons-table-header edit-header">Edit</th>
+            <th class="coupons-table-header delete-header">Delete</th>
+        </tr>
+    </thead>
+    <tbody class="coupons-table-body">
+    {% for coupon in all_coupons %}
+        <tr class="coupons-table-row">
+            <td class="coupons-table-data code-data">{{ coupon.code }}</td>
+            <td class="coupons-table-data valid-from-data">{{ coupon.valid_from }}</td>
+            <td class="coupons-table-data valid-to-data">{{ coupon.valid_to }}</td>
+            <td class="coupons-table-data usage-count-data">{{ coupon.usage_count }}</td>
+            <td class="coupons-table-data usage-limit-data">{{ coupon.usage_limit }}</td>
+            <td class="coupons-table-data status-data">
+                {% if coupon.is_active == False %}
+                    <span class="status-dot red-dot"></span>
+                {% else %}
+                    <span class="status-dot green-dot"></span>
+                {% endif %}
+            </td>
+            <td class="coupons-table-action edit-action"><a href="{% url 'admin_coupon_edit' coupon.id %}" class="edit-coupon-btn">Edit</a></td>
+            <td class="coupons-table-action delete-action"><a href="{% url 'admin_coupon_delete' coupon.id %}" class="delete-coupon-btn">Delete</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
+
+
+
+
+

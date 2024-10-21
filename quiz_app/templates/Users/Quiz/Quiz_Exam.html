@@ -1,0 +1,43 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Quiz
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/Users/Quiz/Quiz_Exam_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+<div class="quiz-container">
+    <h2 class="quiz-title">{{ selected_quiz }}</h2>
+    <form method="POST" class="quiz-form">
+        {% csrf_token %}
+        <div class="quiz-questions">
+            {% for question in quiz_questions %}
+                <h3 class="quiz-question"> Q. {{ question.question }}</h3>
+                <ul class="answer-list">
+                    {% for answer in question_answers %}
+                        {% if answer.question == question %}
+                            <li class="answer-item">
+                                <input type="radio" name="question_{{ question.id }}" value="{{ answer.id }}" class="answer-input">
+                                <label for="question_{{ question.id }}_{{ answer.id }}" class="answer-label">{{ answer.answer }}</label>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </div>
+        <button type="submit" class="submit-button">Submit Quiz</button>
+    </form>
+</div>
+
+{% block script %}
+<script src="" class="quiz-script"></script>
+{% endblock script %}
+
+{% endblock content %}
+
+

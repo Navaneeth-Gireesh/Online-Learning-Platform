@@ -1,0 +1,69 @@
+.consultation-success-container {
+    max-width: 600px; /* Sets a maximum width for the container */
+    margin: 40px auto; /* Centers the container with space at the top and bottom */
+    padding: 20px; /* Adds padding inside the container */
+    border-radius: 10px; /* Rounds the corners */
+    background-color: #f9f9f9; /* Light background color for contrast */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Adds a soft shadow for depth */
+    text-align: center; /* Centers the text */
+}
+
+.success-title {
+    font-size: 24px; /* Increases the font size for the title */
+    color: #4CAF50; /* Green color for the success message */
+    margin-bottom: 15px; /* Space below the title */
+}
+
+.success-message,
+.success-details {
+    font-size: 16px; /* Sets a comfortable font size for the text */
+    color: #333; /* Darker color for better readability */
+    line-height: 1.5; /* Increases line height for improved readability */
+}
+
+.success-message {
+    font-weight: bold; /* Makes the message bold for emphasis */
+}
+
+.success-details {
+    margin-top: 10px; /* Adds space above the details message */
+}
+
+.home-button {
+    display: inline-block; /* Makes the link behave like a button */
+    padding: 10px 20px; /* Adds padding for the button */
+    margin-top: 20px; /* Adds space above the button */
+    font-size: 16px; /* Sets the font size */
+    color: #fff; /* White text color */
+    background-color: #4CAF50; /* Green background color */
+    border: none; /* Removes default border */
+    border-radius: 5px; /* Rounds the button corners */
+    text-decoration: none; /* Removes underline from the link */
+    transition: background-color 0.3s; /* Adds a smooth transition effect */
+}
+
+/* Button hover effect */
+.home-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .consultation-success-container {
+        padding: 15px; /* Reduces padding on smaller screens */
+    }
+
+    .success-title {
+        font-size: 20px; /* Decreases title size for smaller screens */
+    }
+
+    .success-message,
+    .success-details {
+        font-size: 14px; /* Decreases text size for smaller screens */
+    }
+
+    .home-button {
+        padding: 8px 16px; /* Adjusts padding on smaller screens */
+        font-size: 14px; /* Decreases font size for the button */
+    }
+}

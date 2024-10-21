@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EduSphere - Login Notification</title>
+    <meta name="description" content="Notification of your recent login activity with EduSphere.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .page-wrapper {
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .email-container {
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .email-header {
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 10px 0;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .email-footer {
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 0 0 8px 8px;
+            font-size: 12px;
+            border-top: 1px solid #ddd;
+        }
+        .social-links {
+            margin: 10px 0;
+        }
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .social-links img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            transition: transform 0.3s;
+        }
+        .social-links img:hover {
+            transform: scale(1.1);
+        }
+        .email-content h1, .email-content h2, .email-content h3, .email-content h4 {
+            color: #007BFF;
+        }
+        .greeting {
+            font-size: 20px; /* Larger font size for greeting */
+            font-weight: bold; /* Bold text for emphasis */
+            color: #007BFF; /* Consistent blue color */
+            margin: 10px 0; /* Margins for spacing */
+        }
+        .login-notification {
+            padding: 20px;
+            background-color: #eaf0ff; /* Light blue background */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+        .login-notification .notification-paragraph {
+            margin: 10px 0;
+            font-size: 16px; /* Adjusted font size for better readability */
+            line-height: 1.6; /* Increased line height for readability */
+            color: #333; /* Dark color for contrast */
+            text-align: left; /* Left-align text */
+        }
+        .login-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background-color: #fff; /* Ensure the background of the table is white */
+        }
+        .login-table th, .login-table td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+            vertical-align: top; /* Align text to the top */
+        }
+        .login-table th {
+            background-color: #007BFF; /* Blue header background */
+            color: white; /* White text for better contrast */
+            font-weight: normal; /* Non-bold for header titles */
+        }
+        .login-table td {
+            background-color: #f9f9f9; /* Light gray background for table cells */
+        }
+        .login-table tr:nth-child(even) td {
+            background-color: #f2f2f2; /* Alternate row background for readability */
+        }
+        .login-table td:first-child {
+            font-weight: bold; /* Bold titles for each detail */
+        }
+        .login-notification strong {
+            color: #007BFF; /* Blue for emphasis */
+            font-size: 22px;
+        }
+        .email-note {
+            font-style: italic;
+            margin-top: 20px; /* Space above note */
+        }
+        /* Button-like Link */
+        .website-link {
+            display: inline-block;
+            background-color: #00faa2; /* Button color */
+            color: rgb(255, 255, 255); /* Change text color to violet */
+            padding: 10px 20px; /* Padding for button */
+            text-align: center; /* Centered text */
+            text-decoration: none; /* No underline */
+            border-radius: 5px; /* Rounded corners */
+            margin: 20px 0; /* Space around the button */
+            transition: background-color 0.3s, transform 0.3s; /* Transition effects */
+            width: 200px; /* Fixed width for button */
+        }
+        .website-link:hover {
+            background-color: #3ac209; /* Darker blue on hover */
+            transform: scale(1.05); /* Slightly larger on hover */
+        }
+        .center {
+            text-align: center; /* Center align text */
+        }
+    </style>
+</head>
+<body class="page-wrapper">
+    <div class="email-container">
+        <header class="email-header">
+            <h3>EduSphere</h3>
+        </header>
+        
+        <div class="login-notification">
+            <p class="greeting">Dear {{ username|safe }},</p>
+            <p class="notification-paragraph">We noticed that your account has been logged in. If you did not initiate this activity, please take immediate action to secure your account by changing your password.</p>
+            <p class="notification-paragraph">If this was you, no further action is needed.</p>
+            
+            <table class="login-table">
+                <thead>
+                    <tr>
+                        <th>Detail</th>
+                        <th>Information</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Browser</td>
+                        <td>{{ browser|safe }}</td>
+                    </tr>
+                    <tr>
+                        <td>Browser Version</td>
+                        <td>{{ browser_version|safe }}</td>
+                    </tr>
+                    <tr>
+                        <td>Operating System</td>
+                        <td>{{ os|safe }}</td>
+                    </tr>
+                    <tr>
+                        <td>Device</td>
+                        <td>{{ device|safe }}</td>
+                    </tr>
+                    <tr>
+                        <td>IP Address</td>
+                        <td>{{ ip|safe }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="center">
+            <a href="http://127.0.0.1:8000/" class="website-link" target="_blank">Go to Website</a>
+        </div>
+        
+        <p class="email-note">Please note: Do not reply to this email. This inbox is not monitored.</p>
+
+        <h3>Best regards,</h3>
+        <h4>The EduSphere Team</h4>
+        
+        <footer class="email-footer">
+            <h3>EduSphere</h3>
+            <p>&copy; 2024 EduSphere. All rights reserved.</p>
+            <div class="social-links">
+                <h3>Connect with us</h3>
+                <a href="https://www.instagram.com/yourprofile" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/yourprofile" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                </a>
+            </div>
+            <p><strong>Disclaimer:</strong> This email is sent from a project deployed over the internet to showcase skills. No agents or representatives will call you regarding this website or any course on this website. This is a student project and not associated with any company.</p>
+        </footer>
+    </div>
+</body>
+</html>

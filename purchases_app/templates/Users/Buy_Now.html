@@ -1,0 +1,52 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Buy Now
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/Users/Buy_Now_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="purchase-container">
+    <h1 class="purchase-title">Purchase {{selected_course.title}} Course</h1>
+    <h2 class="course-details-title">Course Details</h2>
+    
+    <table class="course-details-table">
+        <thead>
+            <tr>
+                <th class="table-header">Selected Course</th>
+                <th class="table-header">Language</th>
+                <th class="table-header">Instructors</th>
+                <th class="table-header">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="table-cell">{{ selected_course }}</td>
+                <td class="table-cell">{{ selected_course.language }}</td>
+                <td class="table-cell">
+                    {% for instructor in selected_course.instructors.all %}
+                        {{ instructor.first_name }} {{ instructor.last_name }}{% if not forloop.last %}, {% endif %}
+                    {% empty %}
+                        None
+                    {% endfor %}
+                </td>
+                <td class="table-cell">₹ {{ selected_course.discount_price }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="purchase-actions">
+        <a href="{% url 'user_course_categories_and_courses' selected_course.language.slug %}" class="cancel-button">Cancel</a>
+        <a href="{% url 'user_purchase_course' selected_course.slug %}" class="purchase-button">Purchase Now</a>
+    </div>
+</div>
+{% endblock content %}
+
+
+
+
+

@@ -1,0 +1,514 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9fafb;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header Styles */
+header {
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+/* Navbar Styles */
+.auth-nav {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 10px;
+}
+
+.auth-nav .btn {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.auth-nav .btn:hover {
+    color: #fff;
+    background-color: #007bff;
+}
+
+/* Dropdown Button */
+.dropdown-btn {
+    color: #007bff;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+    z-index: 1;
+    padding: 10px 0;
+}
+
+.dropdown-content a {
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Main Content Styles */
+main {
+    padding: 60px 0;
+    text-align: center;
+}
+
+/* Intro Section */
+.intro {
+    background: linear-gradient(to right, #007bff, #6610f2);
+    color: #fff;
+    padding: 60px 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.intro h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.intro p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.intro .btn {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+}
+
+.intro .btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Trending Courses Section */
+.trending-courses {
+    margin-top: 60px;
+    padding-bottom: 60px;
+}
+
+.trending-courses h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+.trending-courses .btn {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+    margin-bottom: 40px;
+}
+
+.trending-courses .btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    min-height: 400px;
+}
+
+.course-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.course-content {
+    padding: 20px;
+}
+
+.course-content h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.course-content p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.course-card .btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.course-card .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Achievements Section */
+.achievements {
+    margin-top: 60px;
+}
+
+.achievements h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.achievement-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-card h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.achievement-card p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Footer Styles */
+footer {
+    background: #fff;
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.9em;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f4f4f4;
+    gap: 20px;
+}
+
+.footer-links, .footer-contact, .footer-social, .footer-newsletter {
+    flex: 1;
+    margin-right: 20px;
+    min-width: 200px; /* Ensure each section has a minimum width */
+}
+
+.footer-links h3, .footer-contact h3, .footer-social h3, .footer-newsletter h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #007bff;
+}
+
+.footer-social {
+    flex: 1;
+    margin-right: 20px;
+    min-width: 200px; /* Ensure each section has a minimum width */
+}
+
+.footer-social .social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #333;
+    font-size: 1.5em;
+    border-radius: 50%;
+    transition: color 0.3s, background-color 0.3s;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-social .social-icon:hover {
+    color: #fff;
+    background-color: #007bff;
+}
+
+/* Newsletter Section */
+.footer-newsletter input[type="email"] {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 300px;
+}
+
+.footer-newsletter input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-newsletter input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+/* Image Styling */
+.rare-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+/* CSS for the loading animation */
+.loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    position: fixed; /* Fixed position */
+    top: 50%; /* Center the loader */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center alignment */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header-container {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .auth-nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .intro h2 {
+        font-size: 2.5em;
+    }
+
+    .trending-courses h2 {
+        font-size: 2.2em;
+    }
+
+    .achievements h2 {
+        font-size: 2.2em;
+    }
+
+    .course-content h3 {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        text-align: center;
+    }
+
+    .auth-nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .dropdown-btn {
+        padding: 5px 10px;
+        font-size: 0.9em;
+    }
+
+    .intro h2 {
+        font-size: 2em;
+    }
+
+    .trending-courses h2, .achievements h2 {
+        font-size: 2em;
+    }
+
+    .course-content h3 {
+        font-size: 1.2em;
+    }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links, .footer-contact, .footer-social, .footer-newsletter {
+        margin-right: 0;
+        margin-bottom: 20px; /* Add spacing between sections */
+    }
+
+    .footer-links ul li, .footer-contact p {
+        text-align: center; /* Center-align text for smaller screens */
+    }
+
+    .footer-social {
+        margin-bottom: 20px; /* Add space between social icons and other sections */
+    }
+
+    .footer-newsletter input[type="email"] {
+        width: 100%; /* Full-width on smaller screens */
+        max-width: none;
+    }
+
+    .footer-newsletter input[type="submit"] {
+        width: 100%; /* Full-width submit button on smaller screens */
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 15px;
+    }
+
+    .footer-links h3, .footer-contact h3, .footer-social h3, .footer-newsletter h3 {
+        font-size: 1.1em;
+    }
+
+    .footer-links ul li a {
+        font-size: 0.9em;
+    }
+
+    .footer-social .social-icon {
+        font-size: 1.2em;
+        width: 25px;
+        height: 25px;
+    }
+
+    .footer-newsletter input[type="email"], 
+    .footer-newsletter input[type="submit"] {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+}

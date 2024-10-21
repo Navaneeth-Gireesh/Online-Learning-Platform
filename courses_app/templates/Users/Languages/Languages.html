@@ -1,0 +1,31 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Languages
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/Users/Languages_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+
+<div class="language-selection-container">
+    <h2 class="language-selection-heading">Choose Your Language</h2>
+    <p class="language-selection-note">Choose a language to see the available courses in that language.</p>
+    <p class="language-selection-note">Alternatively, you can set a preferred language in your profile to avoid being asked again.</p>
+    
+    
+    <div class="language-links">
+        {% for language in all_languages %}
+            <a href="{% url 'user_course_categories_and_courses' language.slug %}" class="language-link">{{ language }}</a>
+        {% endfor %}
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock content %}

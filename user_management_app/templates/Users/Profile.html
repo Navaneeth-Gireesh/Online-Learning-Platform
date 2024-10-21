@@ -1,0 +1,87 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Profile
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Profile.css' %}">
+{% endblock style %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="profile-container">
+    {% if user_profile %}
+    <div class="profile-header">
+        <div class="profile-picture">
+            <img src="{{ user_profile.profile_picture.url }}" alt="Profile Picture">
+        </div>
+        <div class="profile-info">
+            <h2>Hello, <span>{{ user.username }}</span></h2>
+            <a href="{% url 'profile_edit_details' %}" class="edit-button">Edit Details</a>
+        </div>
+    </div>
+    <div class="profile-details">
+        <div class="profile-detail">
+            <h3>First Name:</h3>
+            <p>{{ user.first_name }}</p>
+        </div>
+        <div class="profile-detail">
+            <h3>Last Name:</h3>
+            <p>{{ user.last_name }}</p>
+        </div>
+        <div class="profile-detail">
+            <h3>Mobile Number:</h3>
+            <p>{{ user_profile.mobile_number }}</p>
+        </div>
+        <div class="profile-detail">
+            <h3>Email Address:</h3>
+            <p>{{ user.email }}</p>
+        </div>
+        <div class="profile-detail">
+            <h3>Date of Birth:</h3>
+            <p>{{ user_profile.date_of_birth }}</p>
+        </div>
+        <div class="profile-detail">
+            <h3>Language:</h3>
+            <p>{{ user_profile.language }}</p>
+        </div>
+        <div class="profile-detail">
+            <h3>Location:</h3>
+            <p>{{ user_profile.location }}</p>
+        </div>
+        <div class="profile-detail">
+            <h3>Gender:</h3>
+            <p>{{ user_profile.gender }}</p>
+        </div>
+        <div class="profile-detail">
+            <h3>Education:</h3>
+            <p>{{ user_profile.education }}</p>
+        </div>
+        <div class="profile-detail">
+            <h3>Occupational Status:</h3>
+            <p>{{ user_profile.occupational_status }}</p>
+        </div>
+        <div class="profile-detail">
+            <h3>Date Joined:</h3>
+            <p>{{ user.date_joined }}</p>
+        </div>
+        <div class="profile-detail">
+            <h3>Account Type:</h3>
+            {% if user.is_active and user.is_staff and user.is_superuser %}
+                <p>Admin</p>
+            {% elif user.is_staff %}
+                <p>Teacher</p>
+            {% elif user.is_active %}
+                <p>Student</p>
+            {% endif %}
+            
+        </div>
+    </div>
+    {% else %}
+        <p>No profile information available.</p>
+    {% endif %}
+</div>
+{% endif %}
+{% endblock content %}

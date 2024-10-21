@@ -1,0 +1,137 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Users
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Users/all_users_styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+<h1 class="page-heading">User Management</h1>
+
+<form action="" method="get" class="search-form">
+    <input type="text" name="search_user" id="search_user" placeholder="Search user..." value="{{ search_user|default:'' }}">
+    <button type="submit">Search</button>
+    {% if search_query %}
+        <a href="{% url 'all_users' %}" class="clear-link">Clear</a>
+    {% endif %}
+</form>
+
+
+{% if search_query %}
+<div class="table-container">
+    <table class="user-table" id="studentTable">
+        <thead class="table-header">
+            <tr>
+                <th class="table-header-cell">ID</th>
+                <th class="table-header-cell">Username</th>
+                <th class="table-header-cell">First Name</th>
+                <th class="table-header-cell">Last Name</th>
+                <th class="table-header-cell">Contact Number</th>
+                <th class="table-header-cell">Email ID</th>
+                <th class="table-header-cell">Type</th>
+                <th class="table-header-cell">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="table-body">
+            {% for user in users_profile %}
+            {% if user in search_query %}
+            <tr class="table-row">
+                <td class="table-cell">{{ user.id }}</td>
+                <td class="table-cell">{{ user.user.username }}</td>
+                <td class="table-cell">{{ user.user.first_name }}</td>
+                <td class="table-cell">{{ user.user.last_name }}</td>
+                <td class="table-cell">{{ user.mobile_number }}</td>
+                <td class="table-cell">{{ user.user.email }}</td>
+                <td class="table-cell">
+                    {% if user.user.is_superuser and user.user.is_staff and user.user.is_active %}
+                        <span class="user-type admin">Admin</span>
+                    {% elif not user.user.is_superuser and user.user.is_staff and user.user.is_active %}
+                        <span class="user-type teacher">Teacher</span>
+                    {% elif not user.user.is_superuser and not user.user.is_staff and user.user.is_active %}
+                        <span class="user-type student">Student</span>
+                    {% elif not user.user.is_active %}
+                        <span class="user-type non-active">Non-active</span>
+                    {% endif %}
+                </td>
+                
+                
+                <td class="table-cell">
+                    <a href="{% url 'user_edit' user.id %}" class="action-btn edit-btn">Edit</a>
+                    {% if not user.user.is_superuser and not user.user.is_staff and user.user.is_active %}
+                    <a href="{% url 'admin_user_enrolled_courses_view' user.id %}" class="action-btn courses-btn">Courses</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+
+<!-- Container for user counts -->
+<div class="user-stats-container">
+    <div class="user-stat non-active-stat">
+        <h3>Non-Active Users</h3>
+        <h5 class="count-red">{{ non_active_users }}</h5>  <!-- Always red -->
+    </div>
+    <div class="user-stat">
+        <h3>Total Users</h3>
+        <h5 class="{% if all_user_profiles == 0 %}count-red{% else %}count-green{% endif %}">{{ all_user_profiles }}</h5>
+    </div>
+    <div class="user-stat">
+        <h3>Active Users</h3>
+        <h5 class="{% if active_users == 0 %}count-red{% else %}count-green{% endif %}">{{ active_users }}</h5>
+    </div>
+</div>
+
+<!-- Container for user cards -->
+<div class="user-cards-wrapper">
+    <div class="user-cards-container">
+        <a href="{% url 'all_non_active_users' %}" class="user-card inactive">
+            <div class="card-content">
+                <img src="{% static 'Images/Admins/Users/non_active_logo.jpg' %}" alt="Non Active Users" class="background-image">
+                <div class="text-overlay">
+                    <h2>Non Active</h2>
+                    <p>All Non Active Users.</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="{% url 'all_student_users' %}" class="user-card student-card">
+            <div class="card-content">
+                <img src="{% static 'Images/Admins/Users/student_logo.png' %}" alt="Students" class="background-image">
+                <div class="text-overlay">
+                    <h2>Students</h2>
+                    <p>All Students.</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="{% url 'all_teacher_users' %}" class="user-card teacher-card">
+            <div class="card-content">
+                <img src="{% static 'Images/Admins/Users/teacher_logo.png' %}" alt="Teachers" class="background-image">
+                <div class="text-overlay">
+                    <h2>Teachers</h2>
+                    <p>All Teachers.</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="{% url 'all_admin_users' %}" class="user-card admin-card">
+            <div class="card-content">
+                <img src="{% static 'Images/Admins/Users/admin_logo.png' %}" alt="Admins" class="background-image">
+                <div class="text-overlay">
+                    <h2>Admin</h2>
+                    <p>All Admins.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,56 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Quiz
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/Users/Quiz/Quiz_Home_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="quiz-container">
+    <h2 class="sub-section-title content-title">{{ quiz_selected.sub_section }}</h2>
+    <h3 class="quiz-title content-title">{{ quiz_selected.title }} Quiz</h3>
+    
+    {% if question_order %}
+        <h4 class="question-order-title content-title">Questions: {{ question_order.order }}</h4>
+
+        {% if user_marks %}
+            <h5 class="user-marks content-title">Marks: {{ user_marks.marks }}/{{ question_order.order }}</h5>
+            {% if result == False %}
+                <h6 class="quiz-result failed content-title">Failed</h6>
+            {% else %}
+                <h6 class="quiz-result passed content-title">Passed</h6>
+            {% endif %}
+        {% else %}
+            <h5 class="user-marks content-title no-marks">Marks: Attend Quiz to Gain Marks</h5>
+        {% endif %}
+
+        <h4 class="important-notes-title content-title">Important Notes and Rules</h4>
+        <ul class="notes-list content-item-list">
+            <li class="note-item content-item">Ensure you watch all the videos related to this quiz subsection.</li>
+            <li class="note-item content-item">Read the associated documents thoroughly before starting the quiz.</li>
+            <li class="note-item content-item">Take detailed notes on key concepts and information.</li>
+            <li class="note-item content-item">Cheating is strictly prohibited; do not use external help, including AI tools.</li>
+            <li class="note-item content-item">Be aware of the time limit for the quiz and manage your time wisely.</li>
+            <li class="note-item content-item">Make sure your internet connection is stable before beginning.</li>
+            <li class="note-item content-item">Review your answers carefully before submitting the quiz.</li>
+        </ul>
+        
+        <div class="button-container content-button-container">
+            <a href="{% url 'course_data' quiz_selected.course.slug %}" class="go-back-btn content-button">Go Back</a>
+            <a href="{% url 'user_quiz_exam' quiz_selected.slug %}" class="start-quiz-btn content-button">Start Quiz</a>
+        </div>
+    {% else %}
+        <h4 class="question-order-title content-title no-questions">No Questions Contact the Administrator</h4>
+        <h6 class="contact-info email">Email: <a href="mailto:support@edusphere.com">support@edusphere.com</a></h6>
+        <h6 class="contact-info phone">Phone: +1 234 567 890</h6>
+    {% endif %}
+</div>
+
+{% block script %}
+<script src="" class="quiz-script"></script>
+{% endblock script %}
+{% endblock content %}

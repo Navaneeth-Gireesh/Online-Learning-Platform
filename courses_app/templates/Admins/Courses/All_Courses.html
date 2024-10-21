@@ -1,0 +1,74 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Courses
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Courses/All_Courses_Styles.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<!-- Breadcrumb Navigation Container -->
+<div class="breadcrumb-container">
+    <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb-nav">
+            <li class="breadcrumb-item">
+                <a href="{% url 'all_languages' %}" class="breadcrumb-link">Languages</a>
+            </li>
+            <li class="breadcrumb-item">
+                <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <a href="{% url 'admin_language_course_category_view' category_selected.language.slug %}" class="breadcrumb-link">Categories</a>
+            </li>
+            <li class="breadcrumb-item">
+                <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <span class="breadcrumb-current">Courses</span>
+            </li>
+        </ol>
+    </nav>
+</div>
+
+{% if user.is_authenticated and user.is_superuser %}
+    <div class="courses-container">
+        <h2 class="courses-title">{{ language_selected.language }} Courses</h2>
+        <a href="{% url 'admin_course_create' category_selected.slug %}" class="add-course-button">Add A New Course</a>
+        {% for course in courses %}
+            <div class="course-card">
+                <div class="course-thumbnail">
+                    <img src="{{ course.thumbnail }}" alt="{{ course.title }}">
+                </div>
+                <div class="course-details">
+                    <h3 class="course-title">{{ course.title }}</h3>
+                    <p class="course-price"><span class="original-price">₹ {{ course.original_price }}</span> <span class="discount-price"> ₹{{ course.discount_price }}</span></p>
+                    
+                    <p class="course-instructor">Instructors:
+                        {% for instructor in course.instructors.all %}
+                            {{ instructor.first_name }} {{ instructor.last_name }}{% if not forloop.last %}, {% endif %}
+                        {% empty %}
+                            None
+                        {% endfor %}
+                    </p>
+                    <p class="course-dates">Created At: {{ course.created_at }} | Updated At: {{ course.updated_at }}</p>
+                    <p class="course-status">Status: {{ course.course_active }}</p>
+                    <p class="course-trending">Trending: {{course.trending}}</p>
+                    <div class="course-actions">
+                        <a href="{% url 'admin_course_edit' course.slug %}" class="edit-course-button">Edit</a>
+                        <a href="{% url 'admin_course_delete' course.slug %}" class="delete-course-button" onclick="return confirm('Are you sure you want to delete?');">Delete</a>
+                    </div>
+                    <div class="course-info-links">
+                        <a href="{% url 'admin_course_info' course.slug %}">Course Info</a>
+                        <a href="{% url 'admin_course_trailer_view' course.slug %}">Course Trailer</a>
+                        <a href="{% url 'admin_course_section_view' course.slug %}">Section</a>
+                    </div>
+                    
+                </div>
+            </div>
+        {% empty %}
+            <p class="no-courses-message">No courses available for {{ language_selected.language }} language. Create a course.</p>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% endblock content %}

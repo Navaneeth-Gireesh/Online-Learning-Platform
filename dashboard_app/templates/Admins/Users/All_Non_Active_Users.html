@@ -1,0 +1,47 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Users
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Users/all_users_details_styles.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<h1 class="page-title">Non Active Profiles</h1>
+
+<h3 class="count-title">Total Non Active</h3>
+<h5 class="count-number">{{ total_non_acttive_profiles }}</h5>
+
+<div class="table-container">
+    <table class="table-container-table" id="responsiveTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for non_active in non_active_profile %}
+            <tr>
+                <td>{{ non_active.id }}</td>
+                <td>{{ non_active.user.username }}</td>
+                <td>{{ non_active.user.first_name }}</td>
+                <td>{{ non_active.user.last_name }}</td>
+                <td>{{ non_active.user.email }}</td>
+                <td>
+                    <a href="{% url 'user_edit' non_active.id %}" class="action-btn edit-btn">Edit</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

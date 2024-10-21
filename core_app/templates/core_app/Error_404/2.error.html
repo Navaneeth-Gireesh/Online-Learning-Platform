@@ -1,0 +1,22 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Error
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Error_404_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="error-page">
+    <img src="{% static 'images/Error_404/2.error_404_illustration.jpg' %}" alt="error 404" class="error-image">
+    {% if user.is_authenticated %}
+        <a href="{% url 'base' %}">Back to Home</a>
+    {% else %}
+        <a href="{% url 'index' %}">Back to Home</a>
+    {% endif %}
+</div>
+{% endblock content %}
+

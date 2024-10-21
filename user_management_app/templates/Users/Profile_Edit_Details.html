@@ -1,0 +1,25 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Profile
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Profile_Edit_Details.css' %}">
+{% endblock style %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h3>Edit Profile</h3>
+    <div class="profile-picture">
+        <img src="{{ user.profile.profile_picture.url }}" alt="Profile Picture" id="profilePic">
+    </div>
+    {{ user_edit_form.as_p }}
+    {{ profile_edit_form.as_p }}
+    <button type="submit">Update</button>
+</form>
+{% endif %}
+{% endblock content %}

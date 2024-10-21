@@ -1,0 +1,147 @@
+/* Language Selection Container */
+.language-selection-container {
+    text-align: center; /* Center the content */
+    padding: 60px 40px; /* Increased padding for more space */
+    background: linear-gradient(135deg, #e0f7fa, #b9fbc0); /* Soft gradient background */
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    max-width: 90%; /* Set to a percentage for better responsiveness */
+    margin: 40px auto; /* Center container horizontally with extra margin */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover effect for the container */
+.language-selection-container:hover {
+    transform: translateY(-8px); /* Slight lift on hover */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25); /* More pronounced shadow on hover */
+}
+
+/* Heading */
+.language-selection-heading {
+    font-size: 2.4rem; /* Use rem for better scalability */
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px; /* Increased space below heading */
+    letter-spacing: 1px; /* Slight letter spacing */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+/* Note */
+.language-selection-note {
+    font-size: 1.25rem; /* Increased font size */
+    color: #34495e;
+    margin-bottom: 30px; /* Increased space below note */
+    font-style: italic; /* Italicize the note */
+}
+
+/* Container for language links */
+.language-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between links */
+    justify-content: center; /* Center links */
+}
+
+/* Individual language link */
+.language-link {
+    font-size: 1.4rem; /* Use rem for better scalability */
+    font-weight: 600;
+    color: #3498db;
+    text-decoration: none;
+    padding: 15px 30px; /* Increased padding */
+    border-radius: 12px; /* Rounded corners */
+    background-color: #ffffff;
+    border: 2px solid #3498db; /* Border for the links */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for links */
+}
+
+/* Hover effect for language links */
+.language-link:hover {
+    background-color: #3498db;
+    color: white;
+    transform: translateY(-4px); /* Lift link on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .language-selection-container {
+        padding: 40px 20px; /* Reduced padding */
+    }
+
+    .language-selection-heading {
+        font-size: 2rem; /* Smaller font size */
+    }
+
+    .language-selection-note {
+        font-size: 1.15rem; /* Smaller font size */
+    }
+
+    .language-link {
+        font-size: 1.2rem; /* Smaller font size */
+        padding: 12px 24px; /* Reduced padding */
+    }
+}
+
+@media (max-width: 992px) {
+    .language-selection-container {
+        padding: 30px 15px; /* Further reduced padding */
+    }
+
+    .language-selection-heading {
+        font-size: 1.8rem; /* Smaller font size */
+    }
+
+    .language-selection-note {
+        font-size: 1rem; /* Smaller font size */
+    }
+
+    .language-link {
+        font-size: 1rem; /* Smaller font size */
+        padding: 10px 20px; /* Reduced padding */
+    }
+}
+
+@media (max-width: 768px) {
+    .language-selection-container {
+        padding: 20px 10px; /* Minimum padding */
+    }
+
+    .language-selection-heading {
+        font-size: 1.6rem; /* Smaller font size */
+    }
+
+    .language-selection-note {
+        font-size: 0.9rem; /* Smaller font size */
+    }
+
+    .language-link {
+        font-size: 0.9rem; /* Smaller font size */
+        padding: 8px 16px; /* Reduced padding */
+    }
+}
+
+@media (max-width: 576px) {
+    .language-selection-heading {
+        font-size: 1.4rem; /* Smaller font size */
+    }
+
+    .language-selection-note {
+        font-size: 0.8rem; /* Smaller font size */
+    }
+
+    .language-link {
+        font-size: 0.8rem; /* Smaller font size */
+        padding: 6px 12px; /* Reduced padding */
+    }
+}
+
+/* Stack language links vertically on smaller screens */
+@media (max-width: 576px) {
+    .language-links {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center align */
+    }
+}

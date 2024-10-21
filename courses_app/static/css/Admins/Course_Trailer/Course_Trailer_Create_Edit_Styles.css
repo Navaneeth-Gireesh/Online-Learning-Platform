@@ -1,0 +1,93 @@
+/* Main container for the trailer form */
+.trailer-creation-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Form title styling */
+.trailer-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Form styling */
+.trailer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Individual form group styling */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styling */
+.form-label {
+    font-size: 18px;
+    color: #34495e;
+    margin-bottom: 8px;
+}
+
+/* Error message styling */
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Input, textarea, and select styling */
+.trailer-form input,
+.trailer-form textarea,
+.trailer-form select {
+    padding: 14px;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trailer-form input:focus,
+.trailer-form textarea:focus,
+.trailer-form select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+/* Submit button styling */
+.trailer-submit-btn {
+    padding: 14px 28px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #27ae60;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    align-self: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.trailer-submit-btn:hover {
+    background-color: #1e8449;
+    transform: scale(1.05);
+}
+
+.trailer-submit-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.3);
+}

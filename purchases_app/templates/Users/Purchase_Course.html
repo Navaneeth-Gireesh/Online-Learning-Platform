@@ -1,0 +1,33 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Purchase
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/Users/Purchase_Now_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="coupon-container">
+    <h3 class="course-title">{{ selected_course }} {{ selected_course.language }}</h3>
+    <h5 class="coupon-header">Enter the coupon code</h5>
+
+    <form action="" method="post" class="coupon-form">
+        {% csrf_token %}
+        <div class="input-group">
+            <input type="text" name="coupon_code" class="coupon-input" placeholder="Enter your coupon code" required>
+            <button type="submit" class="coupon-submit">Apply</button>
+        </div>
+    </form>
+    <a href="{% url 'user_course_categories_and_courses' selected_course.language.slug %}" class="coupon-link">Don't have a coupon code?</a>
+</div>
+
+{% block script %}
+
+{% endblock script %}
+{% endblock content %}
+
+
+

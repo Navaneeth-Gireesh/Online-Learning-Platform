@@ -1,0 +1,27 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Course Edit
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Courses/Course_Edit_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+{% if user.is_authenticated and user.is_superuser %}
+
+<h3 class="course-title">{{course_selected.title}} Course Edit</h3>
+<form action="" method="post" class="course-edit-form">
+    {% csrf_token %}
+    {{course_edit_form.as_p}}
+    <button type="submit" class="submit-btn">Update</button>
+</form>
+
+{% endif %}
+
+{% endblock content %}
+
+

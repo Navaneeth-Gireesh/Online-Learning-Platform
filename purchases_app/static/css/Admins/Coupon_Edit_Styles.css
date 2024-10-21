@@ -1,0 +1,116 @@
+/* Styling for the page title */
+.coupon-edit-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 12px;
+    display: inline-block; /* Ensure it's treated as a block for positioning */
+    width: 100%;
+}
+
+.coupon-edit-title::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background-color: #007bff;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: underline 0.5s ease-in-out forwards;
+}
+
+@keyframes underline {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 50px;
+    }
+}
+
+/* Styling for the form container */
+.coupon-edit-form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e1e8f0;
+}
+
+/* Styling for form groups (inputs and labels) */
+.coupon-edit-form .form-group {
+    margin-bottom: 25px;
+}
+
+.coupon-edit-form .form-group label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #5f6368;
+    text-transform: none;
+    letter-spacing: 0.5px;
+}
+
+/* Styling for form inputs */
+.coupon-edit-form .form-group input {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.coupon-edit-form .form-group input::placeholder {
+    color: #aaa;
+    opacity: 1;
+}
+
+.coupon-edit-form .form-group input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    transform: scale(1.02);
+}
+
+/* Styling for the Submit button */
+.coupon-edit-form .btn {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    width: 100%;
+    font-weight: 600;
+    text-transform: none;
+}
+
+.coupon-edit-form .btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+.coupon-edit-form .btn:active {
+    background-color: #004085;
+    transform: translateY(1px);
+}
+
+.coupon-edit-form .btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5);
+}

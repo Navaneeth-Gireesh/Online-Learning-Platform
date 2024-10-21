@@ -1,0 +1,50 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Users
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Users/all_users_details_styles.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<h1 class="page-title">Teacher Profiles</h1>
+
+<h3 class="count-title">Total Teachers</h3>
+<h5 class="count-number">{{total_teacher_profiles}}</h5>
+
+<div class="table-container">
+    <table class="table-container-table" id="teacherTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Contact Number</th>
+                <th>Email ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teacher_profile %}
+            <tr id="teacher-{{ teacher.id }}">
+                <td>{{ teacher.id }}</td>
+                <td>{{ teacher.user.username }}</td>
+                <td>{{ teacher.user.first_name }}</td>
+                <td>{{ teacher.user.last_name }}</td>
+                <td>{{ teacher.mobile_number }}</td>
+                <td>{{ teacher.user.email }}</td>
+                <td>
+                    <a href="{% url 'user_edit' teacher.id %}" class="action-btn edit-btn">Edit</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}
+

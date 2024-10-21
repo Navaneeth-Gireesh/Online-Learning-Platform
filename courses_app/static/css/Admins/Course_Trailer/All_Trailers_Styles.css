@@ -1,0 +1,218 @@
+/* Wrapper for course trailers */
+.course-trailers-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f4f4f4; /* Light background for contrast */
+    border-radius: 8px;
+}
+
+/* Title of the trailers section */
+.trailers-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Link styled as Add New Trailer button */
+.add-trailer-link {
+    display: block;
+    width: 220px;
+    margin: 0 auto 30px;
+    padding: 12px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #28a745;
+    text-align: center;
+    border: none;
+    border-radius: 50px; /* Rounded button for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.add-trailer-link:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+/* Link wrapper for each trailer card */
+.trailer-card-link {
+    display: block;
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color to maintain styling */
+}
+
+/* Card for each trailer */
+.trailer-card {
+    display: flex;
+    align-items: flex-start; /* Align items to the start */
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Video for the trailer */
+.trailer-video {
+    width: 300px; /* Adjust width as needed */
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px; /* Space between video and text */
+}
+
+/* Container for title, order, and actions */
+.trailer-info {
+    display: flex;
+    flex-direction: column; /* Stack title and order vertically */
+    flex: 1; /* Take up remaining space */
+}
+
+/* Title of the trailer */
+.trailer-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 5px; /* Adjust margin as needed */
+    font-weight: 600;
+}
+
+/* Order of the trailer */
+.trailer-order {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px; /* Adjust margin as needed */
+}
+
+/* Container for actions (edit, view, delete) */
+.trailer-actions {
+    display: flex;
+    gap: 15px; /* Space between links */
+}
+
+/* Link styled as Edit button */
+.edit-trailer-link {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px; /* Rounded buttons for consistency */
+    text-decoration: none; /* Remove underline */
+    background-color: #007bff; /* Blue background for the Edit button */
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-trailer-link:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+}
+
+/* Link styled as View button */
+.view-trailer-link {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    background-color: #17a2b8; /* Teal background for the View button */
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.view-trailer-link:hover {
+    background-color: #138496; /* Darker teal on hover */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Link styled as Delete button */
+.delete-trailer-link {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px;
+    background-color: #dc3545; /* Red background for the Delete button */
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-trailer-link:hover {
+    background-color: #c82333; /* Darker red on hover */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* No trailer message styling */
+.no-trailer-message {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Breadcrumb navigation container */
+.breadcrumb-nav {
+    margin-bottom: 20px;
+    font-size: 16px;
+    padding: 10px 20px; /* Added padding for better spacing */
+    background: linear-gradient(to right, #f9f9f9, #eaeaea); /* Subtle gradient background */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    display: flex;
+    flex-wrap: wrap; /* Wrap items if needed */
+    align-items: center; /* Center items vertically */
+}
+
+/* Breadcrumb item container */
+.breadcrumb-item {
+    display: flex;
+    align-items: center; /* Center text vertically */
+    margin: 0; /* Remove margin for list items */
+}
+
+/* Style for breadcrumb links */
+.breadcrumb-link {
+    color: #007bff; /* Blue color for links */
+    text-decoration: none;
+    font-weight: 500; /* Slightly bold for better visibility */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and transform transition */
+}
+
+.breadcrumb-link:hover {
+    color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Separator between breadcrumb links */
+.breadcrumb-separator {
+    color: #999; /* Light gray color for separators */
+    margin: 0 8px; /* Space between links and separator */
+    font-weight: 300; /* Lighter weight for separators */
+}
+
+/* Current page breadcrumb */
+.breadcrumb-current {
+    color: #333; /* Darker color for current page */
+    font-weight: 600; /* Bold for emphasis */
+    text-transform: capitalize; /* Capitalize current page text */
+    pointer-events: none; /* Prevent interaction with the current page */
+}
+
+/* Optional: Add a subtle hover effect to the breadcrumb container */
+.breadcrumb-nav:hover {
+    background: linear-gradient(to right, #f9f9f9, #e0e0e0); /* Slightly darker gradient on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+}

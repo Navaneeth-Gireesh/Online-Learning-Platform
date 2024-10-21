@@ -1,0 +1,120 @@
+/* Wrapper with compact spacing on top and bottom */
+.user-edit-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background: linear-gradient(135deg, #f7fafc, #e2e8f0);
+    padding: 10px;
+}
+
+/* Box styling for a compact and modern look */
+.user-edit-box {
+    background-color: white;
+    max-width: 480px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.user-edit-box:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+/* Improved title with subtle styling */
+.user-edit-title {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2d3748;
+    text-align: center;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+/* Styling for the username field with improved alignment */
+.user-edit-username {
+    font-size: 18px;
+    color: #4a5568;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Form group with optimized spacing */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Improved input fields styling with minimal spacing and compact look */
+.user-edit-form input[type="text"],
+.user-edit-form input[type="email"],
+.user-edit-form input[type="password"],
+.user-edit-form select,
+.user-edit-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    background-color: #f7fafc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.user-edit-form input:focus,
+.user-edit-form select:focus,
+.user-edit-form textarea:focus {
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+    outline: none;
+}
+
+/* Modern, clean button with enhanced hover effects */
+.btn-save {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.btn-save:hover {
+    background-color: #2b6cb0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Compact responsiveness for small screens */
+@media (max-width: 600px) {
+    .user-edit-box {
+        padding: 20px;
+    }
+
+    .user-edit-title {
+        font-size: 22px;
+    }
+
+    .user-edit-username {
+        font-size: 16px;
+    }
+
+    .btn-save {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

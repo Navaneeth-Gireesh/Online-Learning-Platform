@@ -1,0 +1,211 @@
+/* Title Styling */
+.page-title {
+    font-size: 28px;
+    color: #1A237E;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.count-title {
+    text-align: center; /* Center align the text */
+    color: #f04f1a; /* Color for the title */
+    font-size: 1.5rem; /* Adjust font size for the title */
+    margin: 0.5rem 0; /* Add some margin for spacing */
+}
+
+.count-number {
+    text-align: center; /* Center align the count number */
+    font-size: 1.8rem; /* Adjust font size for the count */
+    font-weight: bold; /* Make the number bold */
+    color: #2ecc71; /* Different color for the count number */
+    margin: 0; /* Remove default margin */
+}
+
+
+/* Table Container */
+.table-container {
+    width: auto; /* Adjust as needed */
+    margin: 0 auto;
+    background-color: #E8EAF6;
+    padding: 20px; /* Increase padding for a larger container */
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Larger shadow for a bigger effect */
+    overflow-x: auto; /* Ensure horizontal scrollbar appears when needed */
+    max-width: 1200px; /* Increased max-width for a larger table */
+}
+
+/* Table Styling */
+.table-container-table {
+    width: 100%; /* Full width of the container */
+    border-collapse: collapse;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    color: #3949AB;
+}
+
+.table-container-table thead {
+    background-color: #3949AB;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.table-container-table th, .table-container-table td {
+    padding: 12px 20px; /* Increased padding for a more spacious look */
+    border-bottom: 2px solid #C5CAE9;
+    text-align: left;
+    white-space: nowrap; /* Prevent text wrapping for headers and cells */
+}
+
+.table-container-table th {
+    font-weight: 600;
+}
+
+.table-container-table tbody tr {
+    background-color: #FFFFFF;
+}
+
+.table-container-table tbody tr:nth-child(even) {
+    background-color: #E8EAF6;
+}
+
+.table-container-table tbody tr:hover {
+    background-color: #C5CAE9;
+    transition: background-color 0.3s ease;
+}
+
+/* Action Buttons */
+.action-btn {
+    padding: 8px 12px; /* Increased padding for action buttons */
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background-color: #1E88E5;
+}
+
+.courses-btn {
+    background-color: #28a745; /* Brighter green */
+    padding: 10px 14px; /* Slightly increased padding */
+    border: none; /* Remove border for a cleaner look */
+    font-weight: 600; /* Make the text bold */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add transition effects */
+}
+
+.courses-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slight zoom-in effect on hover */
+}
+
+.action-btn:hover {
+    opacity: 0.85;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 24px; /* Slightly smaller font size */
+    }
+
+    .count-title {
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+    }
+
+    .count-number {
+        font-size: 1.5rem; /* Adjust font size for count number */
+    }
+
+    .table-container {
+        padding: 10px; /* Reduce padding for smaller devices */
+        margin: 10px; /* Add some margin for spacing */
+        overflow-x: auto; /* Enable horizontal scrolling for small screens */
+        max-width: 100%; /* Set max-width for the container */
+        white-space: nowrap; /* Prevent table wrapping */
+    }
+
+    .table-container-table {
+        font-size: 14px; /* Smaller font size for the table */
+        width: auto; /* Use auto width to allow for smaller sizing */
+        max-width: none; /* Allow the table to grow */
+        table-layout: auto; /* Allow for flexible column sizing */
+    }
+
+    .table-container-table th, .table-container-table td {
+        padding: 8px; /* Reduce padding in table cells */
+        word-wrap: break-word; /* Allow long text to wrap within cells */
+    }
+
+    /* Specific styles for ID, Username, Email ID, and Actions columns */
+    .table-container-table th:first-child,
+    .table-container-table td:first-child {
+        width: 50px; /* Fixed width for ID column */
+    }
+
+    .table-container-table th:nth-child(2),
+    .table-container-table td:nth-child(2) {
+        width: 150px; /* Fixed width for Username column */
+    }
+
+    .table-container-table th:nth-child(3),
+    .table-container-table td:nth-child(3) {
+        width: 200px; /* Fixed width for Email ID column */
+    }
+
+    .table-container-table th:nth-child(4),
+    .table-container-table td:nth-child(4) {
+        width: 100px; /* Fixed width for Actions column */
+    }
+
+    .action-btn {
+        font-size: 12px; /* Smaller font size for action buttons */
+    }
+
+    .edit-btn,
+    .courses-btn {
+        padding: 6px 10px; /* Reduce padding for action buttons */
+        font-size: 12px; /* Smaller font size */
+    }
+}
+
+/* For smaller mobile devices */
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 20px; /* Further reduce font size */
+    }
+
+    .count-title {
+        font-size: 1rem; /* Further reduce font size */
+    }
+
+    .count-number {
+        font-size: 1.2rem; /* Further reduce font size */
+    }
+
+    .table-container {
+        padding: 8px; /* Adjust padding */
+    }
+
+    .table-container-table {
+        font-size: 12px; /* Further reduce font size for the table */
+        max-width: none; /* Allow the table to grow */
+    }
+
+    .table-container-table th, .table-container-table td {
+        padding: 6px; /* Further reduce padding in table cells */
+        word-wrap: break-word; /* Allow long text to wrap */
+    }
+
+    .action-btn {
+        padding: 6px; /* Adjust padding for buttons */
+    }
+
+    .edit-btn,
+    .courses-btn {
+        padding: 5px 8px; /* Adjust padding for buttons */
+    }
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EduSphere - Course Purchase Email</title>
+    <meta name="description" content="Course Purchase Confirmation">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        .email-wrapper {
+            width: 100%;
+            padding: 20px 0;
+            background-color: #f0f4f8;
+        }
+        .email-container {
+            width: 90%;
+            max-width: 650px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .email-header {
+            background-color: #f0f4f8;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+            border-bottom: 3px solid #ddd;
+        }
+        .email-header h3 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .email-body {
+            padding: 20px;
+            text-align: center;
+        }
+        .course-details {
+            background-color: #f9fbfd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .course-details h3 {
+            margin: 0;
+            font-size: 22px;
+            color: #0077cc;
+            font-weight: 600;
+        }
+        .course-details img {
+            display: block;
+            max-width: 300px; /* Increased image size */
+            height: auto;
+            margin: 0 auto 20px; /* Center image and add margin below */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        .course-details h4 {
+            margin: 5px 0;
+            font-size: 20px;
+            color: #333;
+            font-weight: 600;
+            text-align: center; /* Center course title */
+        }
+        .course-details p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+        }
+        .course-details .course-purchase-info {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .course-details .course-category {
+            font-style: italic;
+            color: #0077cc;
+            font-weight: 500;
+        }
+        .email-note {
+            font-style: italic;
+            color: #888;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .email-signature {
+            text-align: center;
+            margin-top: 30px;
+            color: #333;
+        }
+        .email-signature h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .email-signature h4 {
+            font-size: 20px;
+            color: #0077cc;
+            margin-top: 0;
+        }
+        .email-footer {
+            background-color: #f0f4f8;
+            padding: 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            border-top: 3px solid #ddd;
+            font-size: 12px;
+        }
+        .email-footer h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .email-footer .social-links {
+            margin: 10px 0;
+        }
+        .email-footer .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .email-footer .social-links img {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+        .email-footer .social-links img:hover {
+            transform: scale(1.1);
+        }
+        .email-footer .footer-disclaimer {
+            font-size: 12px;
+            color: #777;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+        .my-learning-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ffffff; /* Changed to white */
+            color: #0077cc; /* Dark text for contrast */
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            width: 200px;
+            border: 2px solid #0077cc; /* Added border to keep the button outline visible */
+            outline: none;
+        }
+        .my-learning-link:hover {
+            background-color: #f0f4f8; /* Slightly darken on hover */
+            color: #005fa3; /* Darker text on hover for contrast */
+        }
+    </style>
+</head>
+<body>
+    <div class="email-wrapper">
+        <div class="email-container">
+            <!-- Email Header -->
+            <header class="email-header">
+                <h3 class="header-title">EduSphere</h3>
+            </header>
+            
+            <!-- Email Body -->
+            <div class="email-body">
+                <div class="course-details">
+                    <h3 class="greeting-text">Hello, {{selected_user}}</h3>
+                    <img src="{{ thumbnail }}" alt="{{course.title}}" class="course-thumbnail">
+                    <h4 class="course-title">{{course}}</h4>
+                    <p class="course-purchase-info">You have successfully purchased the {{course}} course in {{language}}.</p>
+                    <p class="course-category">Category: {{course_category}}</p>
+                    <!-- Link to My Learning -->
+                    <a href="http://127.0.0.1:8000/Purchase/Course/My_Learnings" class="my-learning-link">Go to My Learning</a>
+                </div>
+                <p class="email-note">Please note: This is an automated email. Do not reply to this email address.</p>
+            </div>
+
+            <!-- Email Signature -->
+            <div class="email-signature">
+                <h3 class="signature-closing">Best regards,</h3>
+                <h4 class="signature-team">The EduSphere Team</h4>
+            </div>
+
+            <!-- Email Footer -->
+            <footer class="email-footer">
+                <h3 class="footer-title">EduSphere</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/yourprofile" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="https://www.facebook.com/yourprofile" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                    </a>
+                </div>
+                <p class="footer-disclaimer"><strong>Disclaimer:</strong> This email is part of a student project for showcasing skills. No representative will contact you regarding this course or any other matter.</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Category Edit
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Course_Categories/Course_Category_Edit_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+{% if user.is_authenticated and user.is_superuser %}
+    <div class="course-category-edit-container">
+        <h2 class="course-category-edit-title">Edit Language</h2>
+        <form method="post" class="course-category-edit-form" action="">
+            {% csrf_token %}
+            {{ course_category_edit_form.as_p }}
+            <button type="submit" class="course-category-save-btn">Save Changes</button>
+            <a href="{% url 'admin_language_course_category_view' category_selected.language.slug %}" class="course-category-cancel-btn">Cancel</a>
+        </form>
+    </div>
+{% endif %}
+{% endblock content %}
+
+

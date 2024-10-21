@@ -1,0 +1,170 @@
+/* Wrapper for the quiz section */
+.quiz-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f4f4f4; /* Light background for contrast */
+    border-radius: 8px;
+}
+
+/* Title of the quiz section */
+.quiz-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Add quiz button */
+.quiz-add-button {
+    display: block;
+    width: 220px;
+    margin: 0 auto 30px;
+    padding: 12px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #28a745;
+    text-align: center;
+    border-radius: 50px; /* Rounded button for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.quiz-add-button:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+/* Individual quiz card */
+.quiz-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.quiz-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px); /* Elevate card on hover */
+}
+
+/* Quiz details */
+.quiz-name {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.quiz-order {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Actions inside the quiz card */
+.quiz-actions {
+    display: flex;
+    gap: 15px; /* Space between links */
+}
+
+/* Buttons inside the quiz card */
+.quiz-edit-button, .quiz-delete-button, .quiz-questions-link {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px; /* Rounded buttons for consistency */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Edit button */
+.quiz-edit-button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.quiz-edit-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+/* Delete button */
+.quiz-delete-button {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.quiz-delete-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+/* Questions link button */
+.quiz-questions-link {
+    background-color: #17a2b8;
+    color: #fff;
+}
+
+.quiz-questions-link:hover {
+    background-color: #138496; /* Darker teal on hover */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+/* Empty quiz message */
+.quiz-empty-message {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb-nav {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap if there's not enough space */
+    align-items: center; /* Aligns items vertically center */
+    padding: 8px 15px; /* Add padding around the breadcrumb */
+    margin: 0;
+    list-style: none; /* Remove default list styling */
+    background-color: #f8f9fa; /* Light grey background */
+    border-radius: 4px; /* Optional: Add rounded corners */
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center; /* Center text vertically */
+    margin: 0; /* Remove margin for list items */
+}
+
+.breadcrumb-separator {
+    color: #999; /* Light gray color for separators */
+    margin: 0 8px; /* Space between links and separator */
+    font-weight: 300; /* Lighter weight for separators */
+}
+
+.breadcrumb-link {
+    color: #007bff; /* Blue color for links */
+    text-decoration: none;
+    font-weight: 500; /* Slightly bold for better visibility */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and transform transition */
+}
+
+.breadcrumb-link:hover {
+    color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.breadcrumb-current {
+    color: #333; /* Darker color for current page */
+    font-weight: 600; /* Bold for emphasis */
+    text-transform: capitalize; /* Capitalize current page text */
+    pointer-events: none; /* Prevent interaction with the current page */
+}

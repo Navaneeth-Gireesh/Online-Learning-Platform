@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EduSphere</title>
+    <meta name="description" content="Welcome to EduSphere, your go-to platform for learning and development.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/index_styles.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Loading Overlay -->
+    <div id="loader" class="loader"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="{% static 'images/logo.png' %}" alt="EduSphere Logo" class="rare-image">
+            </div>
+            <nav class="auth-nav">
+                <a href="{% url 'expert_advice' %}" class="btn">Expert Advice</a>
+                <a href="#trending-courses" class="btn">Trending Courses</a>
+                <a href="#achievements" class="btn">Achievements</a>
+                <div class="dropdown">
+                    <button class="dropdown-btn">Account</button>
+                    <div class="dropdown-content">
+                        <a href="{% url 'user_registration' %}" class="btn">Register</a>
+                        <a href="{% url 'user_login' %}" class="btn">Login</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Intro Section -->
+            <section class="intro">
+                <h2>Welcome to EduSphere</h2>
+                <p>Your Gateway to Learning</p>
+                <a href="{% url 'user_registration' %}" class="btn">Explore Courses</a>
+            </section>
+
+            <!-- Trending Courses Section -->
+            <section id="trending-courses" class="trending-courses">
+                <h2>Trending Courses</h2>
+                <div class="courses-grid">
+                    <!-- Example Course Card -->
+                    <div class="course-card">
+                        <h3>Web Development</h3>
+                        <img src="{% static 'images/Trending_Courses/Web_Development.jpg' %}" alt="" class="rare-image">
+                        <p>Transform Your Web Development Skills: MEAN/MERN Stack.</p>
+                        <a href="{% url 'user_registration' %}" class="btn">Explore Now</a>
+                    </div>
+                    <div class="course-card">
+                        <h3>Python Programming</h3>
+                        <img src="{% static 'images/Trending_Courses/Python_Programming.png' %}" alt="" class="rare-image">
+                        <p>Empower Your Python Skills: From Basics to Django and Machine Learning</p>
+                        <a href="{% url 'user_registration' %}" class="btn">Explore Now</a>
+                    </div>
+                    <div class="course-card">
+                        <h3>Machine Learning</h3>
+                        <img src="{% static 'images/Trending_Courses/Machine_Learning.jpg' %}" alt="" class="rare-image">
+                        <p>Master the Fundamentals of Machine Learning and Data Science.</p>
+                        <a href="{% url 'user_registration' %}" class="btn">Explore Now</a>
+                    </div>
+                    <!-- Add more course cards as needed -->
+                </div>
+            </section>
+
+            <!-- Achievements Section -->
+            <section id="achievements" class="achievements">
+                <h2>Our Achievements</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <h3>10,000+ Students</h3>
+                        <img src="{% static 'images/Our_Achievements/students.jpg' %}" alt="" class="rare-image">
+                        <p>Join thousands of learners who have excelled in their careers.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h3>500+ Courses</h3>
+                        <img src="{% static 'images/Our_Achievements/courses.png' %}" alt="" class="rare-image">
+                        <p>Explore a wide variety of courses designed to meet your needs.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h3>Top 100 Worldwide</h3>
+                        <img src="{% static 'images/Our_Achievements/world_wide.jpg' %}" alt="" class="rare-image">
+                        <p>Ranked among the top 100 e-learning platforms globally.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+<!-- Footer -->
+
+<footer>
+    <div class="container footer-container">
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#trending-courses">Trending Courses</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="{% url 'user_registration' %}">Register</a></li>
+                <li><a href="{% url 'user_login' %}">Login</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:support@edusphere.com">support@edusphere.com</a></p>
+            <p>Phone: +1 234 567 890</p>
+            <p>Address: 123 Learning Lane, Education City, ED 45678</p>
+        </div>
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <a href="https://www.facebook.com/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/tweet_nav_" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/insta.nav_/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/navaneeth2002/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    <div class="container">
+        <p>&copy; 2024 EduSphere. All rights reserved.</p>
+    </div>
+</footer>
+
+
+{% block script %}
+<script src="{% static 'js/index_script.js' %}"></script>
+{% endblock script %}
+
+</body>
+</html>

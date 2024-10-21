@@ -1,0 +1,39 @@
+/* Error Page Styles */
+.error-page {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff; /* White background */
+    min-height: 100vh; /* Ensure it covers full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: flex-start; /* Align content to the top */
+    margin-top: 0; /* No extra margin */
+}
+
+.error-image {
+    max-width: 80%; /* Adjust size to fit well */
+    height: auto;
+    max-height: 60vh; /* Limit height to avoid excessive scrolling */
+    margin-top: 20px; /* Space between image and navbar */
+    margin-bottom: 20px; /* Space between image and button */
+    object-fit: contain; /* Ensure image fits well within its container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for image */
+}
+
+.error-page a {
+    display: inline-block;
+    padding: 10px 20px; /* Smaller button size */
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    background-color: #b0e0e6; /* Powder blue color */
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.error-page a:hover {
+    background-color: #87ceeb; /* Slightly darker powder blue on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}

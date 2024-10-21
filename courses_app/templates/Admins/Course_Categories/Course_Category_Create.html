@@ -1,0 +1,50 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Category Create
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Course_Categories/Course_Category_Create_Styles.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+
+{% if user.is_authenticated and user.is_superuser %}
+<div class="category-form-container">
+    <h2 class="form-title">Add a New Category</h2>
+    <h4 class="language-info">{{ language_selected.language }}</h4>
+    <form class="category-form" action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="{{ category_form.language.id_for_label }}" class="form-label">{{ category_form.language.label }}</label>
+            {{ category_form.language }}
+            {% if category_form.language.errors %}
+                <div class="error-message">{{ category_form.language.errors }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="{{ category_form.name.id_for_label }}" class="form-label">{{ category_form.name.label }}</label>
+            {{ category_form.name }}
+            {% if category_form.name.errors %}
+                <div class="error-message">{{ category_form.name.errors }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="{{ category_form.description.id_for_label }}" class="form-label">{{ category_form.description.label }}</label>
+            {{ category_form.description }}
+            {% if category_form.description.errors %}
+                <div class="error-message">{{ category_form.description.errors }}</div>
+            {% endif %}
+        </div>
+        <button type="submit" class="submit-button">Create</button>
+    </form>
+</div>
+{% endif %}
+
+{% endblock content %}
+
+
+

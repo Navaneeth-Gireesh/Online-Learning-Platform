@@ -1,0 +1,67 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Quiz
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Quiz/All_Quiz_Styles.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<!-- Breadcrumb Navigation Container -->
+<div class="quiz-breadcrumb-container">
+    <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb-nav">
+            <li class="breadcrumb-item">
+                <a href="{% url 'all_languages' %}" class="breadcrumb-link">Languages</a>
+            </li>
+            <li class="breadcrumb-item">
+                <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <a href="{% url 'admin_language_course_category_view' sub_section_selected.language.slug %}" class="breadcrumb-link">Categories</a>
+            </li>
+            <li class="breadcrumb-item">
+                <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <a href="{% url 'admin_course_view' sub_section_selected.category.slug %}" class="breadcrumb-link">Courses</a>
+            </li>
+            <li class="breadcrumb-item">
+                <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <a href="{% url 'admin_course_section_view' sub_section_selected.course.slug %}" class="breadcrumb-link">Section</a>
+            </li>
+            <li class="breadcrumb-item">
+                <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <a href="{% url 'admin_course_sub_section_view' sub_section_selected.section.slug %}" class="breadcrumb-link">Sub Section</a>
+            </li>
+            <li class="breadcrumb-item">
+                <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <span class="breadcrumb-current">Quiz</span>
+            </li>
+        </ol>
+    </nav>
+</div>
+
+{% if user.is_authenticated and user.is_superuser %}
+    <div class="quiz-container">
+        <h2 class="quiz-title">{{ sub_section_selected }} - Quiz</h2>
+        <a href="{% url 'admin_course_quiz_create' sub_section_selected.slug  %}" class="quiz-add-button">Add A New Quiz</a>
+        {% for quiz in quiz_selected %}
+            <div class="quiz-card">
+                <div class="quiz-details">
+                    <h3 class="quiz-name">{{ quiz.title }}</h3>
+                    <p class="quiz-order">Order: {{ quiz.order }}</p>
+                    <div class="quiz-actions">
+                        <a href="{% url 'admin_course_quiz_edit' quiz.slug %}" class="quiz-edit-button">Edit</a>
+                        <a href="{% url 'admin_course_quiz_delete' quiz.slug %}" class="quiz-delete-button" onclick="return confirm('Are you sure you want to delete?');">Delete</a>
+                        <a href="{% url 'admin_quiz_question_view' quiz.slug %}" class="quiz-questions-link">Questions</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p class="quiz-empty-message">No Quizzes available for {{ sub_section_selected }} Sub Section. Create a Quiz.</p>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% endblock content %}

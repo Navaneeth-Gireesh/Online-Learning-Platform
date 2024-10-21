@@ -1,0 +1,50 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Users
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Users/all_users_details_styles.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<h1 class="page-title">Student Profiles</h1>
+
+<h3 class="count-title">Total Students</h3>
+<h5 class="count-number">{{total_student_profiles}}</h5>
+
+<div class="table-container">
+    <table class="table-container-table" id="studentTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Contact Number</th>
+                <th>Email ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in student_profile %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.user.username }}</td>
+                <td>{{ student.user.first_name }}</td>
+                <td>{{ student.user.last_name }}</td>
+                <td>{{ student.mobile_number }}</td>
+                <td>{{ student.user.email }}</td>
+                <td>
+                    <a href="{% url 'user_edit' student.id %}" class="action-btn edit-btn">Edit</a>
+                    <a href="{% url 'admin_user_enrolled_courses_view' student.id %}" class="action-btn courses-btn">Courses</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

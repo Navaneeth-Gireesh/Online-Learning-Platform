@@ -1,0 +1,25 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Course Video Create
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Courses/Course_Create_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+{% if user.is_authenticated and user.is_superuser %}
+    <div class="language-create-container">
+        <h2>Create a New Video</h2>
+        <form method="post" class="language-form">
+            {% csrf_token %}
+            {{ course_video_form.as_p }}
+            <button type="submit" class="submit-btn">Create</button>
+        </form>
+    </div>
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,40 @@
+.coupon-error-container {
+    padding: 20px;
+    border: 1px solid #f44336;
+    background-color: #fdd;
+    text-align: center;
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.coupon-error-heading {
+    color: #f44336;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.coupon-error-message {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.coupon-error-instructions {
+    color: #777;
+    font-size: 14px;
+}
+
+.coupon-error-back-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.coupon-error-back-link:hover {
+    background-color: #1976D2;
+}

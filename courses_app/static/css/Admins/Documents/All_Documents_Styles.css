@@ -1,0 +1,186 @@
+/* Wrapper for document list */
+.document-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+/* Title of the section */
+.document-section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Button to add a new document */
+.add-document-button {
+    display: block;
+    width: 220px;
+    margin: 0 auto 30px;
+    padding: 12px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #28a745;
+    text-align: center;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.add-document-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Document card */
+.document-details {
+    display: flex;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.document-details:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+/* Document iframe on the left */
+.document-frame {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.document-frame iframe {
+    width: 100%;
+    height: 400px; /* Adjusted height for first page visibility */
+    border-radius: 8px;
+    background-color: #000;
+}
+
+/* Document details on the right */
+.document-info {
+    flex: 2;
+}
+
+/* Document title */
+.document-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Document order */
+.document-order {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Action buttons */
+.document-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.document-actions a {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.edit-document-button {
+    background-color: #007bff;
+}
+
+.edit-document-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.view-document-button {
+    background-color: #17a2b8;
+}
+
+.view-document-button:hover {
+    background-color: #138496;
+    transform: scale(1.05);
+}
+
+.delete-document-button {
+    background-color: #dc3545;
+}
+
+.delete-document-button:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+/* No documents message */
+.no-documents-message {
+    font-size: 1.2rem;
+    color: #0bf022;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8px 15px;
+    margin: 0;
+    list-style: none;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.breadcrumb-separator {
+    color: #999;
+    margin: 0 8px;
+    font-weight: 300;
+}
+
+.breadcrumb-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.breadcrumb-link:hover {
+    color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.breadcrumb-current {
+    color: #333;
+    font-weight: 600;
+    text-transform: capitalize;
+    pointer-events: none;
+}

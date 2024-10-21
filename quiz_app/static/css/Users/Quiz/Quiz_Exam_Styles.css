@@ -1,0 +1,108 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.quiz-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Quiz Title */
+.quiz-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Quiz Form */
+.quiz-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Question Styles */
+.quiz-questions {
+    margin-bottom: 20px;
+}
+
+.quiz-question {
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #343a40;
+}
+
+/* Answer List */
+.answer-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Answer Item */
+.answer-item {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.answer-item:hover {
+    background-color: #e2e6ea;
+}
+
+/* Input Styles */
+.answer-input {
+    margin-right: 10px;
+}
+
+/* Button Styles */
+.submit-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    align-self: center; /* Center the button */
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .quiz-container {
+        padding: 15px;
+    }
+
+    .quiz-title {
+        font-size: 1.5em;
+    }
+
+    .quiz-question {
+        font-size: 1.1em;
+    }
+
+    .submit-button {
+        width: 100%;
+    }
+}

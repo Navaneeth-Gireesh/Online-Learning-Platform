@@ -1,0 +1,25 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Video Edit
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Course_Trailer/Course_Trailer_Create_Edit_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+{% if user.is_authenticated and user.is_superuser %}
+    <div class="trailer-creation-container">
+        <h2 class="trailer-title">{{ video_selected }} Video</h2>
+        <form method="post" class="trailer-form">
+            {% csrf_token %}
+            {{ video_edit_form.as_p }}
+            <button type="submit" class="trailer-submit-btn">Update Video</button>
+        </form>
+    </div>
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,350 @@
+/* Advanced Course Platform Styles */
+
+/* Content Wrapper */
+.content-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 32px; /* 2rem */
+    max-width: 1400px;
+    margin: 32px auto; /* 2rem */
+    padding: 32px; /* 2rem */
+    background: linear-gradient(135deg, #f6f9fc 0%, #ffffff 100%);
+    border-radius: 20px;
+    box-shadow: 
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+/* Left Column */
+.left-column {
+    padding: 40px; /* 2.5rem */
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Course Title */
+.course-title {
+    font-size: 48px; /* 3rem */
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 32px; /* 2rem */
+    text-align: center;
+    letter-spacing: -1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Video Player Styles */
+.video-player {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+/* Title Styles */
+.title {
+    font-size: 38px; /* 2.4rem */
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 48px; /* 3rem */
+    padding-bottom: 12px; /* 0.75rem */
+    border-bottom: 4px solid #3498db;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Title underline */
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #3498db;
+}
+
+/* Course Description */
+.course-description {
+    margin-top: 24px; /* 1.5rem */
+    font-size: 20px; /* 1.2rem */
+    color: #34495e;
+    line-height: 1.8;
+}
+
+/* Button Styles */
+.button {
+    display: block; /* Changed to block */
+    width: 200px; /* Set a width for the button */
+    margin: 0 auto; /* Center the button */
+    padding: 12px 24px; /* Vertical and horizontal padding */
+    font-size: 16px; /* Font size */
+    font-weight: 600; /* Font weight */
+    color: #ffffff; /* Text color */
+    background-color: #3498db; /* Button color */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effects */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Button Container (if applicable) */
+.button-container {
+    text-align: center; /* Center contents inside the container */
+    margin: 20px 0; /* Optional margin for spacing */
+}
+
+/* Button Hover Effect */
+.button:hover {
+    background-color: #2980b9; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Button Disabled State */
+.button:disabled {
+    background-color: #95a5a6; /* Grey color for disabled state */
+    cursor: not-allowed; /* Not allowed cursor */
+}
+
+/* Section Title */
+.section-title {
+    font-size: 22px; /* Increased size */
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 16px; /* Space below the title */
+    padding-bottom: 8px; /* Padding for spacing */
+    border-bottom: 2px solid #3498db; /* Bottom border for emphasis */
+    position: relative;
+}
+
+/* Section Title Hover Effect */
+.section-title:hover {
+    color: #2980b9; /* Darker shade on hover */
+    transition: color 0.3s ease;
+}
+
+/* Sub-section Styles */
+.sub-section {
+    background-color: #ffffff; /* White background */
+    border-radius: 10px; /* Slightly smaller radius for sub-sections */
+    margin-top: 16px; /* Space between sub-sections */
+    padding: 16px; /* 1rem */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Sub-section Title */
+.sub-section-title {
+    font-size: 15px; /* Increased size */
+    font-weight: 300;
+    color: #2c3e50;
+    margin-bottom: 12px; /* Space below the title */
+    padding-bottom: 4px; /* Padding for spacing */
+    border-bottom: 1px solid #e2e8f0; /* Subtle bottom border */
+    transition: color 0.3s ease; /* Transition for hover effect */
+}
+
+/* Sub-section Title Hover Effect */
+.sub-section-title:hover {
+    color: #2980b9; /* Darker shade on hover */
+}
+
+/* Sub-section Content */
+.sub-section-content {
+    font-size: 16px; /* Adjusted font size for content */
+    color: #4a5568;
+    line-height: 1.7;
+}
+
+/* Right Column */
+.right-column {
+    padding: 40px; /* 2.5rem */
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Lessons Box */
+.lessons-box {
+    background-color: #f8fafc;
+    border-radius: 16px; /* Rounded edges */
+    padding: 20px; /* Adjusted padding for balance */
+    max-height: 500px; /* Set a maximum height */
+    overflow-y: auto; /* Scrollbar shows when content overflows */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #3498db #f8fafc; /* Custom colors for Firefox */
+}
+
+/* Custom Scrollbar for WebKit browsers (Chrome, Safari, etc.) */
+.lessons-box::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+.lessons-box::-webkit-scrollbar-track {
+    background: #f8fafc; /* Background of the scrollbar track */
+}
+
+.lessons-box::-webkit-scrollbar-thumb {
+    background-color: #3498db; /* Color of the scroll thumb */
+    border-radius: 20px; /* Rounded edges for the scroll thumb */
+    border: 3px solid #f8fafc; /* Adds padding around the thumb */
+}
+
+.lessons-box::-webkit-scrollbar-thumb:hover {
+    background-color: #2980b9; /* Darker shade when hovered */
+}
+
+/* Lessons Title */
+.lessons-title {
+    font-size: 32px; /* 2rem */
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 24px; /* 1.5rem */
+    text-align: center;
+    position: relative;
+}
+
+/* Lessons Title Underline */
+.lessons-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: #3498db;
+    margin: 8px auto 0; /* 0.5rem */
+}
+
+/* Link Styles */
+.link {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px; /* 1rem 1.25rem */
+    margin-bottom: 16px; /* 1rem */
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #2c3e50;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.2s ease;
+}
+
+.link:hover {
+    background-color: #f1f1f1;
+}
+
+.link img {
+    width: 28px;
+    height: 28px;
+    margin-right: 16px; /* 1rem */
+}
+
+/* Session Styles */
+.session {
+    background-color: #ffffff; /* White background */
+    border-radius: 16px; /* Rounded edges */
+    margin-bottom: 32px; /* 2rem */
+    padding: 32px; /* 2rem */
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Session Title */
+.session-title {
+    font-size: 28px; /* 1.75rem */
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 24px; /* 1.5rem */
+}
+
+/* Session Description */
+.session-description {
+    font-size: 18px; /* 1.125rem */
+    color: #4a5568;
+    line-height: 1.8;
+}
+
+/* Locked Image */
+.locked-image {
+    position: absolute; /* Change to absolute positioning */
+    right: 0; /* Align to the right */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust to center */
+    margin-left: 20px; /* Optional margin for spacing */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .content-wrapper {
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .left-column {
+        order: 1; /* Keep left column at default order */
+    }
+
+    .lessons-box {
+        order: 0; /* Move lessons box to the top of left column */
+        margin-bottom: 20px; /* Add some spacing below lessons box */
+    }
+
+    .right-column {
+        order: 2; /* Keep right column below left column */
+        padding: 16px; /* Less padding for small screens */
+    }
+
+    /* Other styles remain unchanged */
+    .course-title {
+        font-size: 28px; /* Adjust title size */
+    }
+
+    .video-player {
+        width: 100%; /* Full width for video player */
+        margin-bottom: 16px; /* Space below video player */
+    }
+
+    .course-description {
+        font-size: 16px; /* Smaller font size for descriptions */
+    }
+
+    .button {
+        width: 100%; /* Full width for buttons */
+        font-size: 14px; /* Consistent font size */
+    }
+
+    .section-title {
+        font-size: 18px; /* Adjust section title size */
+    }
+
+    .sub-section-title {
+        font-size: 13px; /* Adjust sub-section title size */
+    }
+
+    .lessons-title {
+        font-size: 24px; /* Adjust lessons title size */
+    }
+
+    .session-title {
+        font-size: 22px; /* Adjust session title size */
+    }
+
+    .session-description {
+        font-size: 14px; /* Smaller font size for session description */
+    }
+
+    .locked-image {
+        width: 20px; /* Adjust size for the locked image */
+        height: 20px; /* Adjust size for the locked image */
+    }
+}

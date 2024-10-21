@@ -1,0 +1,111 @@
+/* CSS for the Course Category Edit Page */
+
+/* Container for the entire course category edit form */
+.course-category-edit-container {
+    max-width: 500px; /* Slightly wider container */
+    margin: 40px auto; /* More spacing at the top */
+    padding: 30px; /* More padding inside the container */
+    background-color: #ffffff; /* White background for a clean look */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow for more depth */
+    text-align: center; /* Center the text inside the container */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transitions for dynamic effects */
+}
+
+/* Dynamic hover effect for the container */
+.course-category-edit-container:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Heading for the course category edit form */
+.course-category-edit-title {
+    margin-bottom: 25px; /* Space below the heading */
+    font-size: 26px; /* Slightly larger font size for the heading */
+    color: #333; /* Dark color for the heading text */
+    font-weight: bold; /* Bold heading */
+}
+
+/* Form element styling */
+.course-category-edit-form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    align-items: center; /* Center the form elements */
+}
+
+/* Styling for form field paragraphs */
+.course-category-edit-form p {
+    margin-bottom: 20px; /* Increased space between form fields */
+    width: 100%; /* Full width of the container */
+}
+
+/* Label styling */
+.course-category-edit-form label {
+    font-size: 16px; /* Font size for the labels */
+    color: #666; /* Medium dark color for the label text */
+    margin-bottom: 8px; /* Slightly more space below the label */
+    display: block; /* Ensure labels take up the full width */
+    font-weight: 500; /* Slightly bolder labels */
+}
+
+/* Input field styling */
+.course-category-edit-form input[type="text"],
+.course-category-edit-form select,
+.course-category-edit-form textarea {
+    width: 100%; /* Full width of the container */
+    padding: 12px 15px; /* Padding inside the input fields */
+    border: 1px solid #ddd; /* Light border around the input fields */
+    border-radius: 6px; /* Slightly more rounded corners */
+    font-size: 16px; /* Larger font size for the input text */
+    color: #333; /* Darker input text color */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition for dynamic focus effects */
+}
+
+/* Focus state for form elements */
+.course-category-edit-form input[type="text"]:focus,
+.course-category-edit-form select:focus,
+.course-category-edit-form textarea:focus {
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue glow on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Save button styling */
+.course-category-save-btn {
+    background-color: #28a745; /* Green background for success */
+    color: white; /* White text color */
+    padding: 12px 25px; /* Padding inside the button */
+    border: none; /* Remove the border */
+    border-radius: 6px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for the button text */
+    font-weight: bold; /* Bold text for emphasis */
+    margin-top: 15px; /* Space above the button */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth background color transition and lift effect */
+}
+
+/* Hover effect for the save button */
+.course-category-save-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+/* Cancel button styling */
+.course-category-cancel-btn {
+    background-color: #dc3545; /* Red background for cancellation */
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline from the link */
+    padding: 12px 25px; /* Padding inside the link */
+    border-radius: 6px; /* Rounded corners */
+    font-size: 16px; /* Font size for the link text */
+    font-weight: bold; /* Bold text for emphasis */
+    display: inline-block; /* Make the link behave like a button */
+    margin-top: 10px; /* Space above the cancel button */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth background color transition and lift effect */
+}
+
+/* Hover effect for the cancel button */
+.course-category-cancel-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}

@@ -1,0 +1,413 @@
+/* Title Styling */
+.page-title {
+    font-size: 28px;
+    color: #1A237E;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Heading styles */
+.page-heading {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2.5rem;
+    color: #007bff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Container for user stats */
+.user-stats-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+    padding: 15px;
+    background: #f8f9fa; /* Light background for contrast */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual user stat styles */
+.user-stat {
+    text-align: center;
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 30%; /* Set width for uniformity */
+}
+
+.user-stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Count styles */
+.count-red {
+    color: #dc3545; /* Red color */
+    font-size: 2rem;
+}
+
+.count-green {
+    color: #28a745; /* Green color */
+    font-size: 2rem;
+}
+
+/* New styles for non-active user stats */
+.user-stat.non-active-stat {
+    border: 2px solid #dc3545; /* Red border */
+    color: #dc3545; /* Red text */
+    padding: 10px; /* Add padding for better appearance */
+    border-radius: 15px; /* Rounded corners */
+    background: #f8f9fa; /* Light background for contrast */
+}
+
+.user-stat.non-active-stat h3,
+.user-stat.non-active-stat h5 {
+    color: #dc3545; /* Red text for h3 and h5 in non-active stats */
+}
+
+/* Wrapper for user cards */
+.user-cards-wrapper {
+    padding: 20px; /* Padding for the wrapper */
+}
+
+/* Container for user cards */
+.user-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px 0; /* Reduced margin for tighter spacing */
+}
+
+/* Card styles */
+.user-card {
+    width: 300px; /* Increased card size */
+    margin: 10px; /* Reduced margin between cards */
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* New styles for non-active user cards */
+.user-card.inactive {
+    border: 2px solid #dc3545; /* Red border */
+    color: #dc3545; /* Red text */
+}
+
+/* Specific styles for text overlay in inactive user card */
+.user-card.inactive .text-overlay h2,
+.user-card.inactive .text-overlay p {
+    color: #dc3545; /* Red text for h2 and p in inactive cards */
+}
+
+/* Background image styles */
+.background-image {
+    width: 100%;
+    height: 200px; /* Increased height for better visuals */
+    object-fit: cover; /* Cover image */
+    transition: transform 0.3s ease;
+}
+
+.card-content:hover .background-image {
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+/* Overlay styles */
+.text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    transition: background 0.3s ease;
+}
+
+.user-card:hover .text-overlay {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.text-overlay h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.text-overlay p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+}
+
+/* Search Bar Styles */
+.search-form {
+    display: flex;
+    justify-content: center; /* Center the search bar */
+    margin: 20px 0; /* Add space around the search form */
+}
+
+.search-form input[type="text"] {
+    padding: 12px; /* Add padding for better input feel */
+    border: 2px solid #007bff; /* Blue border for input */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size for input text */
+    width: 300px; /* Set a width for the search input */
+    transition: border-color 0.3s ease; /* Transition for border color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.search-form input[type="text"]:focus {
+    border-color: #0056b3; /* Darker blue on focus */
+    outline: none; /* Remove default outline */
+}
+
+.search-form button {
+    padding: 12px 18px; /* Padding for button */
+    background-color: #007bff; /* Blue background for button */
+    color: white; /* White text for button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size for button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-left: 10px; /* Space between input and button */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for background color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.search-form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Clear Button Styling */
+.clear-link {
+    display: inline-block; /* Allows padding and background color */
+    padding: 12px 18px; /* Add padding for size */
+    background-color: #dc3545; /* Red background for clear button */
+    color: white; /* Text color */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    border: none; /* Remove border */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+    margin-left: 10px; /* Space between the button and the clear link */
+}
+
+.clear-link:hover {
+    background-color: #c82333; /* Darker background on hover */
+}
+
+
+/* Table Styles */
+.table-container {
+    margin: 20px 0; /* Add space around the table */
+    overflow-x: auto; /* Allow horizontal scrolling for small screens */
+    background: #E8EAF6; /* Light background for contrast */
+    border-radius: 15px; /* Rounded corners for table container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for table */
+}
+
+.user-table {
+    width: 80%; /* Adjusted width for the table to make it smaller */
+    border-collapse: collapse; /* Collapse borders */
+    background: #ffffff; /* White background for table */
+    margin: 0 auto; /* Center the table */
+    border-radius: 15px; /* Rounded corners for the table */
+    overflow: hidden; /* Ensure borders are rounded on all sides */
+}
+
+
+
+.table-header {
+    background-color: #007bff; /* Blue background for header */
+    color: white; /* White text for header */
+}
+
+.table-header-cell {
+    padding: 12px; /* Padding for header cells */
+    text-align: left; /* Align text to the left */
+    font-weight: bold; /* Bold text for header */
+}
+
+.table-body {
+    background-color: #f8f9fa; /* Light background for body */
+}
+
+.table-row {
+    transition: background-color 0.3s ease; /* Transition for row background */
+}
+
+.table-row:hover {
+    background-color: #e9ecef; /* Change background on hover */
+}
+
+.table-cell {
+    padding: 10px; /* Padding for cells */
+    border-bottom: 1px solid #dee2e6; /* Bottom border for cells */
+    color: #3949AB; /* Default text color for table cells */
+}
+
+/* User Type Colors */
+.user-type.admin {
+    color: #007bff; /* Blue for Admin */
+    font-weight: bold; /* Make it bold */
+}
+
+.user-type.teacher {
+    color: #28a745; /* Green for Teacher */
+    font-weight: bold; /* Make it bold */
+}
+
+.user-type.student {
+    color: #6f42c1; /* Violet for Student */
+    font-weight: bold; /* Make it bold */
+}
+
+.user-type.non-active {
+    color: #dc3545; /* Red for Non-active */
+    font-weight: bold; /* Make it bold */
+}
+
+/* No Results Message */
+.no-results {
+    text-align: center; /* Center the no results message */
+    padding: 20px; /* Padding for better appearance */
+    color: #dc3545; /* Red color for no results */
+}
+/* General Button Styles */
+.action-btn {
+    padding: 10px 15px; /* Padding for button */
+    font-size: 1rem; /* Font size for button text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-decoration: none; /* Remove underline from links */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition effects */
+}
+
+/* Edit Button Styles */
+.edit-btn {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+}
+
+.edit-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Courses Button Styles */
+.courses-btn {
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+}
+
+.courses-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Enhanced Responsive styles */
+@media (max-width: 1200px) {
+    .user-stats-container {
+        flex-wrap: wrap; /* Allow wrapping for medium devices */
+    }
+
+    .user-stat {
+        width: 48%; /* Adjust width for medium devices */
+        margin: 1%; /* Reduced margin for tighter spacing */
+    }
+
+    .search-form {
+        flex-direction: column; /* Stack search elements vertically */
+        align-items: center; /* Center align */
+        margin: 20px 0; /* Add space around the search form */
+    }
+
+    .search-form input[type="text"] {
+        width: 90%; /* Adjust width for smaller devices */
+        margin-bottom: 10px; /* Space below the input */
+    }
+
+    .search-form button {
+        width: 90%; /* Button full width for smaller devices */
+    }
+}
+
+@media (max-width: 768px) {
+    .user-card {
+        width: 100%; /* Full width for small screens */
+        margin: 10px 0; /* Vertical margin between cards */
+    }
+
+    .user-cards-container {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center cards */
+    }
+
+    .user-stat {
+        width: 100%; /* Full width for user stats on small screens */
+        margin: 5px 0; /* Adjust margin */
+    }
+
+    .user-stats-container {
+        flex-direction: column; /* Stack user stats vertically on small screens */
+    }
+
+    .table-container {
+        width: 100%; /* Full width for table on small screens */
+        padding: 10px; /* Padding for better spacing */
+    }
+
+    .user-table {
+        width: 100%; /* Full width for table on small screens */
+        font-size: 0.9rem; /* Slightly smaller font size for table */
+    }
+
+    .table-cell {
+        padding: 8px; /* Adjusted padding for cells */
+    }
+
+    .no-results {
+        font-size: 1.5rem; /* Larger font size for better visibility */
+        padding: 15px; /* Increased padding */
+    }
+}
+
+/* Additional mobile responsiveness for very small screens */
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 22px; /* Smaller title for small screens */
+    }
+
+    .page-heading {
+        font-size: 1.8rem; /* Smaller heading for small screens */
+    }
+
+    .text-overlay h2 {
+        font-size: 1.2rem; /* Smaller font size for overlay heading */
+    }
+
+    .text-overlay p {
+        font-size: 0.7rem; /* Smaller font size for overlay paragraph */
+    }
+
+    .search-form input[type="text"],
+    .search-form button {
+        width: 95%; /* Almost full width for inputs and buttons */
+    }
+
+    .search-form {
+        margin-bottom: 15px; /* Space below the search form */
+    }
+}

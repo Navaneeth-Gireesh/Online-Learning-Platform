@@ -1,0 +1,61 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Welcome Back! Please Log In
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Login.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="custom-login-container">
+    <div class="custom-login-wrapper">
+        <div class="custom-login-image-section">
+            <img src="{% static 'Images/Login/login_illustator.jpg' %}" alt="Illustration of a user logging in" class="custom-login-image">
+        </div>
+        <div class="custom-login-form-section">
+            {% load socialaccount %}
+            <a href="{% provider_login_url 'google' %}?next=/" class="custom-google-login">
+                <span class="custom-google-text">Login with Google</span>
+                <img src="{% static 'Images/Login/google_illustrator.png' %}" alt="Google Icon" class="custom-google-icon">
+            </a>
+            <a href="{% provider_login_url 'github' %}?next=/" class="custom-github-login">
+                <span class="custom-github-text">Login with GitHub</span>
+                <img src="{% static 'Images/Login/github_illustrator.png' %}" alt="GitHub Icon" class="custom-github-icon">
+            </a>
+            <h3 class="custom-login-divider">or</h3>
+            <h2 class="custom-login-subtitle">Enter Your Credentials to Get Started</h2>
+            
+            <!-- Message display section -->
+            <div class="custom-message-container">
+                {% for message in messages %}
+                    <div class="custom-message-box {{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+            
+            <form action="" method="post" class="custom-login-form">
+                {% csrf_token %}
+                <div class="custom-input-group">
+                    <label for="username" class="custom-input-label">Username</label>
+                    <input type="text" name="username" id="username" class="custom-input-field small-input" required aria-required="true" aria-label="Username">
+                </div>
+                
+                <div class="custom-input-group">
+                    <label for="password" class="custom-input-label">Password</label>
+                    <input type="password" name="password" id="password" class="custom-input-field small-input" required aria-required="true" aria-label="Password">
+                </div>
+                
+                <!-- Forgot Password Link Positioned Below the Password Input -->
+                <a href="{% url 'forgot_password' %}" class="custom-forgot-password">Forgot Password?</a>
+                
+                <button type="submit" class="custom-submit-button">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+

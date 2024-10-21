@@ -1,0 +1,40 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+User Entrolled Courses
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Users/Courses/All_Enrolled_Courses_Styles.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<h1 class="page-title">Student Profiles</h1>
+<div class="table-container">
+    <h3 class="section-title">{{selected_user}} Enrolled Courses</h3>
+    <table class="table-container-table" id="studentTable">
+        <thead>
+            <tr>
+                <th>Course</th>
+                <th>Language</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for course in enrolled_courses %}
+            <tr>
+                <td>{{ course.course }}</td>
+                <td>{{ course.language }}</td>
+                <td>{{ course.course_category }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="action-btn-container">
+        <a href="{% url 'all_student_users' %}" class="action-btn go-back-btn">Go Back</a>
+    </div>
+</div>
+{% endblock content %}
+

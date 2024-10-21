@@ -1,0 +1,77 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Sub Sections
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Videos/All_Videos_Styles.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<!-- Video Breadcrumb Navigation -->
+<div class="video-breadcrumb-container">
+    <nav aria-label="Breadcrumb">
+        <ol class="video-breadcrumb-nav">
+            <li class="video-breadcrumb-item">
+                <a href="{% url 'all_languages' %}" class="video-breadcrumb-link">Languages</a>
+            </li>
+            <li class="video-breadcrumb-item">
+                <span class="video-breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <a href="{% url 'admin_language_course_category_view' sub_section_selected.language.slug %}" class="video-breadcrumb-link">Categories</a>
+            </li>
+            <li class="video-breadcrumb-item">
+                <span class="video-breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <a href="{% url 'admin_course_view' sub_section_selected.category.slug %}" class="video-breadcrumb-link">Courses</a>
+            </li>
+            <li class="video-breadcrumb-item">
+                <span class="video-breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <a href="{% url 'admin_course_section_view' sub_section_selected.course.slug %}" class="video-breadcrumb-link">Section</a>
+            </li>
+            <li class="video-breadcrumb-item">
+                <span class="video-breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <a href="{% url 'admin_course_sub_section_view' sub_section_selected.section.slug %}" class="video-breadcrumb-link">Sub Section</a>
+            </li>
+            <li class="video-breadcrumb-item">
+                <span class="video-breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <span class="video-breadcrumb-current">Video</span>
+            </li>
+        </ol>
+    </nav>
+</div>
+
+{% if user.is_authenticated and user.is_superuser %}
+    <div class="video-list-container">
+        <h2 class="video-section-title">{{ sub_section_selected }} - Videos</h2>
+        <a href="{% url 'admin_course_video_create' sub_section_selected.slug %}" class="add-video-button">Add A New Video</a>
+        {% for video in videos_selected %}
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <video class="custom-video-thumbnail" 
+                        src="{{ video.video_file }}" 
+                        controls 
+                        controlslist="nodownload"
+                        poster="{{ video.thumbnail }}">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-details">
+                    <h3 class="video-title">{{ video.title }}</h3>
+                    <p class="video-order">Order: {{ video.order }}</p>
+                    <div class="video-actions">
+                        <a href="{% url 'admin_course_video_edit' video.slug %}" class="edit-video-button">Edit</a>
+                        <a href="{% url 'admin_course_video_delete' video.slug %}" class="delete-video-button" onclick="return confirm('Are you sure you want to delete?');">Delete</a>
+                        <a href="{% url 'admin_video_document_view' video.slug %}" class="documents-video-button">Documents</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p class="no-videos-message">No videos available for {{ sub_section_selected }} Sub Section. Create a Video.</p>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% endblock content %}
+

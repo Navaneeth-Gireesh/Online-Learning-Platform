@@ -1,0 +1,158 @@
+/* Container */
+.purchase-container {
+    padding: 30px;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 50px auto;
+    transition: transform 0.3s ease;
+}
+
+.purchase-container:hover {
+    transform: translateY(-5px);
+}
+
+/* Titles */
+.purchase-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.course-details-title {
+    font-size: 1.8rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Table Styles */
+.course-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.course-details-table th, 
+.course-details-table td {
+    padding: 15px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.course-details-table th {
+    background-color: #4a90e2;
+    color: white;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.course-details-table td {
+    background-color: #f7f7f7;
+    font-size: 1rem;
+    color: #333;
+}
+
+.course-details-table tr:hover td {
+    background-color: #e3f2fd;
+}
+
+/* Hover animations for rows */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Centered Button Styles */
+.purchase-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 15px; /* Adds space between buttons */
+}
+
+.cancel-button, 
+.purchase-button {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Cancel Button */
+.cancel-button {
+    background-color: #e74c3c;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cancel-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background-color: #c0392b;
+}
+
+/* Purchase Button */
+.purchase-button {
+    background-color: #27ae60;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.purchase-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background-color: #229954;
+}
+
+/* Button Animation */
+.cancel-button:active, 
+.purchase-button:active {
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .purchase-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .purchase-title {
+        font-size: 2rem;
+    }
+
+    .course-details-title {
+        font-size: 1.5rem;
+    }
+
+    .purchase-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cancel-button, .purchase-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .purchase-button {
+        margin-bottom: 0;
+    }
+}

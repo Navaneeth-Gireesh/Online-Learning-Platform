@@ -1,0 +1,249 @@
+/* Full-Page Registration Styling */
+.registration-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f9fafb;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Auth Options Styling */
+.auth-options {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-title {
+    font-size: 2rem; /* Using rem for scalability */
+    color: #555; /* Gray shade for the title */
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.google-signup, .github-signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 1rem; /* Increased padding for better touch targets */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 320px;
+    margin: 1rem auto; /* Using rem for margins */
+    font-size: 1rem; /* Using rem for font size */
+    font-weight: 500;
+}
+
+.google-signup {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.google-signup:hover {
+    background-color: #f1f1f1;
+}
+
+.github-signup {
+    background-color: #333;
+    border: 1px solid #333;
+    color: #fff;
+}
+
+.github-signup:hover {
+    background-color: #444;
+}
+
+.auth-logo {
+    width: 1.25rem; /* Using rem for scalability */
+    height: 1.25rem;
+    margin-right: 0.625rem; /* Using rem for margins */
+    object-fit: contain;
+}
+
+/* Message List Styling */
+ul.messages {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Individual Message Styling */
+ul.messages li {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* Success Message Styling */
+ul.messages .success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Error Message Styling */
+ul.messages .error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Warning Message Styling */
+ul.messages .warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+/* Info Message Styling */
+ul.messages .info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* Registration Form Styling */
+.registration-form {
+    background: #fff;
+    padding: 2.5rem; /* Using rem for padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.form-title {
+    color: #007bff;
+    font-size: 2rem; /* Using rem for scalability */
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.25rem; /* Using rem for gaps */
+    margin-bottom: 20px;
+}
+
+.form-column-left, .form-column-right {
+    flex: 1;
+    min-width: 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem; /* Using rem for scalability */
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1rem; /* Using rem for scalability */
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.help-text {
+    font-size: 0.75rem; /* Using rem for scalability */
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Error Styling */
+.error-text {
+    color: #dc3545; /* Bootstrap's danger color for errors */
+    font-size: 0.75rem; /* Using rem for scalability */
+    margin-top: 5px;
+}
+
+.form-errors {
+    margin-bottom: 20px;
+}
+
+.form-errors p {
+    margin: 0;
+}
+
+/* Submit Button Styling */
+.submit-button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.submit-button {
+    padding: 0.75rem 1.5rem; /* Increased padding */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem; /* Using rem for scalability */
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+    .form-column-left, .form-column-right {
+        flex: 1 1 100%;
+    }
+    .registration-form {
+        padding: 1.25rem; /* Reduced padding for smaller screens */
+    }
+}
+
+/* Additional Media Query for smaller devices */
+@media (max-width: 480px) {
+    .auth-title {
+        font-size: 1.5rem; /* Reduced font size */
+    }
+    .form-title {
+        font-size: 1.75rem; /* Reduced font size */
+    }
+    .google-signup, .github-signup {
+        font-size: 0.875rem; /* Smaller button font size */
+        padding: 0.75rem; /* Adjusted button padding */
+    }
+    .submit-button {
+        padding: 0.5rem 1rem; /* Smaller padding for buttons */
+        font-size: 0.875rem; /* Adjusted button font size */
+    }
+    .form-group input {
+        font-size: 0.875rem; /* Adjusted input font size */
+    }
+}

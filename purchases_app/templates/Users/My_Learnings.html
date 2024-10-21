@@ -1,0 +1,53 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+My Learnings
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/Users/My_Learnings_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="page-title-container">
+    <h1 class="page-title">My Learnings</h1>
+    <p class="course-header">Courses You Have Purchased</p>
+</div>
+
+<div class="courses-container">
+    {% if user_purchased_courses %}
+        {% for course in user_purchased_courses %}
+        <div class="course-card">
+            <img class="course-thumbnail" src="{{ course.course.thumbnail }}" alt="{{ course.course.title }}" class="thumbnail-img">
+            <h2 class="course-title">{{ course.course.title }}</h2>
+            <p class="course-language">Language: {{ course.language }}</p>
+            <p class="course-instructors">Instructors:
+                {% for instructor in course.course.instructors.all %}
+                    <span class="instructor-name">{{ instructor.first_name }} {{ instructor.last_name }}</span>{% if not forloop.last %}, {% endif %}
+                {% empty %}
+                    <span class="no-instructors">None</span>
+                {% endfor %}
+            </p>
+            <div class="course-actions">
+                <a class="view-course" href="{% url 'course_data' course.course.slug %}">View</a>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div>
+            <p class="no-courses-message">Unlock Your Potential - Buy a Course Now!</p>
+        </div>
+    {% endif %}
+</div>
+
+{% block script %}
+{% endblock script %}
+{% endblock content %}
+
+
+
+
+
+
+

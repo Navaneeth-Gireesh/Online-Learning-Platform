@@ -1,0 +1,26 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Language Edit
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Course_Languages/Course_Language_Edit_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+{% if user.is_authenticated and user.is_superuser %}
+    <div class="language-create-container">
+        <h2>Edit Language</h2>
+        <form method="post" class="language-form" action="{% url 'admin_course_language_edit' language_selected.slug %}">
+            {% csrf_token %}
+            {{ language_edit_form.as_p }}
+            <button type="submit" class="submit-btn">Save Changes</button>
+            <a href="{% url 'all_languages' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+{% endif %}
+
+{% endblock content %}

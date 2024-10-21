@@ -1,0 +1,162 @@
+/* Container for the quiz */
+.quiz-container {
+    max-width: 800px; /* Max width for the container */
+    margin: 30px auto; /* Center the container */
+    padding: 40px; /* Add padding inside the container */
+    border-radius: 20px; /* More rounded corners */
+    background: #ffffff; /* White background for the container */
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Title styles for sub-section */
+.sub-section-title {
+    font-size: 2.4em; /* Larger font size */
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Space below the title */
+    color: #2980b9; /* A vibrant blue color */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase for emphasis */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Title styles for quiz */
+.quiz-title {
+    font-size: 3em; /* Larger font size for quiz title */
+    text-align: center; /* Center the title */
+    margin-bottom: 30px; /* Space below the title */
+    color: #2c3e50; /* Darker color for emphasis */
+}
+
+/* Question order title styles */
+.question-order-title {
+    font-size: 1.6em; /* Increased font size */
+    color: #34495e; /* Dark grey color */
+    margin: 15px 0; /* Space above and below the title */
+    text-align: center; /* Center align */
+}
+
+/* Marks styles */
+.user-marks {
+    font-size: 1.4em; /* Larger font size */
+    color: black; /* Black text for marks */
+    text-align: center; /* Center align */
+    margin: 15px 0; /* Space above and below */
+}
+
+/* Result container styles */
+.quiz-result {
+    font-size: 1.5em; /* Larger font size */
+    text-align: center; /* Center align */
+    padding: 10px; /* Padding inside the container */
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px 0; /* Space above and below */
+}
+
+/* Dynamic background for result container */
+.passed {
+    background-color: #2ecc71; /* Green background */
+    color: #ffffff; /* White text */
+}
+
+.failed {
+    background-color: #e74c3c; /* Red background */
+    color: #ffffff; /* White text */
+}
+
+/* Important notes title styles */
+.important-notes-title {
+    font-size: 2em; /* Larger than before */
+    color: #34495e; /* Darker color */
+    margin-bottom: 25px; /* Space below the title */
+    text-align: center; /* Center align */
+}
+
+/* Notes list styles */
+.notes-list {
+    list-style-type: disc; /* Disc style for list items */
+    padding-left: 20px; /* Indent for list */
+    margin-bottom: 30px; /* Space below the list */
+}
+
+.notes-list .note-item {
+    margin-bottom: 12px; /* Space between list items */
+    font-size: 1.1em; /* Standard size for list items */
+    color: #555; /* Dark grey color */
+    line-height: 1.5; /* Better readability */
+}
+
+/* Button container styles */
+.button-container {
+    text-align: center; /* Center align the buttons */
+    margin-top: 40px; /* Space above the buttons */
+}
+
+/* Button styles */
+.go-back-btn, .start-quiz-btn {
+    display: inline-block; /* Align buttons next to each other */
+    padding: 15px 30px; /* More padding for better touch targets */
+    margin: 0 10px; /* Space between buttons */
+    border-radius: 25px; /* More rounded corners */
+    font-size: 1.2em; /* Larger font size */
+    text-decoration: none; /* Remove underline from links */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth effects */
+    font-weight: bold; /* Make buttons bold */
+}
+
+/* Go Back button styles */
+.go-back-btn {
+    background: linear-gradient(to right, #e74c3c, #c0392b); /* Red gradient background */
+    color: #ffffff; /* White text */
+}
+
+.go-back-btn:hover {
+    background: linear-gradient(to right, #c0392b, #e74c3c); /* Darker red on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* Start Quiz button styles */
+.start-quiz-btn {
+    background: linear-gradient(to right, #2ecc71, #27ae60); /* Green gradient background */
+    color: #ffffff; /* White text */
+}
+
+.start-quiz-btn:hover {
+    background: linear-gradient(to right, #27ae60, #2ecc71); /* Darker green on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* Contact info styles */
+.contact-info {
+    font-size: 1.2em; /* Standard font size for contact information */
+    color: #34495e; /* Dark grey color */
+    text-align: center; /* Center align */
+    margin: 5px 0; /* Space above and below */
+}
+
+/* No Questions message styles */
+.no-questions {
+    font-size: 1.6em; /* Increased font size */
+    color: #e74c3c; /* Red color */
+    text-align: center; /* Center align */
+    margin: 20px 0; /* Space above and below */
+    text-decoration: none; /* Remove underline */
+    animation: blink 1s infinite; /* Apply blinking animation */
+}
+
+/* Blinking animation */
+@keyframes blink {
+    0% {
+        opacity: 1; /* Fully visible */
+    }
+    50% {
+        opacity: 0; /* Invisible */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Script styles, if needed */
+.quiz-script {
+    display: none; /* Hide script tag by default */
+}

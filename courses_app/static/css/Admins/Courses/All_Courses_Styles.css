@@ -1,0 +1,256 @@
+/* Wrapper for all courses */
+.courses-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+/* Title of the section */
+.courses-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Button to add a new course */
+.add-course-button {
+    display: block;
+    width: 220px;
+    margin: 0 auto 30px;
+    padding: 12px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #28a745;
+    text-align: center;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.add-course-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Individual course card */
+.course-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.course-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+/* Course thumbnail on the left */
+.course-thumbnail {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.course-thumbnail img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Course details on the right */
+.course-details {
+    flex: 2;
+}
+
+/* Course title */
+.course-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Course price */
+.course-price {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 10px;
+}
+
+.discount-price {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Course description */
+.course-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Instructor name */
+.course-instructor,
+.course-dates,
+.course-status,
+.course-trending {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Action buttons */
+.course-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.course-actions a {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.edit-course-button {
+    background-color: #007bff;
+}
+
+.edit-course-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.view-course-button {
+    background-color: #17a2b8;
+}
+
+.view-course-button:hover {
+    background-color: #138496;
+    transform: scale(1.05);
+}
+
+.delete-course-button {
+    background-color: #dc3545;
+}
+
+.delete-course-button:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+/* Styling for the second div containing the course info links */
+.course-info-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Styling for each link inside the course-info-links div */
+.course-info-links a {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #FF7F50; /* Coral */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+/* Hover effect for the course info links */
+.course-info-links a:hover {
+    background-color: #FF6347; /* Tomato */
+    transform: scale(1.05);
+}
+
+/* Alternate link colors for variety */
+.course-info-links a:nth-child(2) {
+    background-color: #4682B4; /* Steel Blue */
+}
+
+.course-info-links a:nth-child(2):hover {
+    background-color: #4169E1; /* Royal Blue */
+}
+
+.course-info-links a:nth-child(3) {
+    background-color: #FFD700; /* Gold */
+}
+
+.course-info-links a:nth-child(3):hover {
+    background-color: #FFC107; /* Amber */
+}
+
+
+/* No courses message */
+.no-courses-message {
+    font-size: 1.2rem;
+    color: #0bf022;;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb-nav {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap if there's not enough space */
+    align-items: center; /* Aligns items vertically center */
+    padding: 8px 15px; /* Add padding around the breadcrumb */
+    margin: 0;
+    list-style: none; /* Remove default list styling */
+    background-color: #f8f9fa; /* Light grey background */
+    border-radius: 4px; /* Optional: Add rounded corners */
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center; /* Center text vertically */
+    margin: 0; /* Remove margin for list items */
+}
+
+.breadcrumb-separator {
+    color: #999; /* Light gray color for separators */
+    margin: 0 8px; /* Space between links and separator */
+    font-weight: 300; /* Lighter weight for separators */
+}
+
+.breadcrumb-link {
+    color: #007bff; /* Blue color for links */
+    text-decoration: none;
+    font-weight: 500; /* Slightly bold for better visibility */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and transform transition */
+}
+
+.breadcrumb-link:hover {
+    color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.breadcrumb-current {
+    color: #333; /* Darker color for current page */
+    font-weight: 600; /* Bold for emphasis */
+    text-transform: capitalize; /* Capitalize current page text */
+    pointer-events: none; /* Prevent interaction with the current page */
+}

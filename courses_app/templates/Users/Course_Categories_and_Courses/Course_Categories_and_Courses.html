@@ -1,0 +1,129 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Courses
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/Users/Course_Categories_and_Courses_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+
+<div class="page-title-container">
+    <h2 class="page-title">{{ language_selected }} Courses</h2>
+</div>
+
+<div class="search-form-container">
+    <form action="" method="get">
+        <input type="text" name="course_name" value="{{ request.GET.course_name }}" placeholder="Search for a Course in {{ language_selected }}" class="search-input">
+        <button type="submit" class="search-btn">Search</button>
+    </form>
+</div>
+
+<div class="searched-courses-container">
+    {% if course_data %}
+        <h3>Search Results</h3>
+        <div class="searched-results">
+            {% for course in course_data %}
+            <div class="searched-course-item">
+                <div class="searched-course-image">
+                    <img src="{{ course.thumbnail }}" alt="{{ course.title }}" class="searched-course-thumbnail">
+                    {% if course.trending %}
+                    <div class="searched-trending-badge">Trending</div>
+                    {% endif %}
+                </div>
+
+                <div class="searched-course-details">
+                    <h4 class="searched-course-title">{{ course.title }}</h4>
+                    <p class="searched-course-instructors">Instructors:
+                        {% for instructor in course.instructors.all %}
+                            {{ instructor.first_name }} {{ instructor.last_name }}{% if not forloop.last %}, {% endif %}
+                        {% empty %}
+                            None
+                        {% endfor %}
+                    </p>
+
+                    <p class="searched-course-prices">
+                        <span class="searched-original-price">₹{{ course.original_price }}</span>
+                        <span class="searched-discount-price">₹{{ course.discount_price }}</span>
+                    </p>
+
+                    <div class="searched-course-buttons">
+                        {% if course.title in user_purchases or request.user.is_superuser or request.user.is_staff %}
+                            <a href="{% url 'course_data' course.slug %}" class="searched-view-btn">View</a>
+                        {% else %}
+                            <a href="{% url 'buy_now' course.slug %}" class="searched-buy-now-btn">Buy Now</a>
+                            <a href="{% url 'course_data' course.slug %}" class="searched-view-btn">View</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    {% else %}
+        {% for category in all_categories %}
+        <div class="category-wrapper">
+            <div class="category-container">
+                <h3 class="category-title">{{ category }}</h3>
+
+                <div class="courses-slider">
+                    <button class="move-btn left-btn" onclick="scrollCourses('left', '{{ category.id }}')">←</button>
+                    <div class="courses-list-container" id="courses-list-{{ category.id }}">
+                        <div class="courses-list">
+                            {% for course in all_courses %}
+                            {% if course.category == category %}
+                            <div class="course-item">
+                                <div class="course-image-container">
+                                    <img src="{{ course.thumbnail }}" alt="{{ course.title }}" class="course-thumbnail">
+                                    {% if course.trending %}
+                                    <div class="trending-badge">Trending</div>
+                                    {% endif %}
+                                </div>
+
+                                <div class="course-details">
+                                    <h4 class="course-title">{{ course.title }}</h4>
+                                    <p class="course-instructors">Instructors:
+                                        {% for instructor in course.instructors.all %}
+                                            {{ instructor.first_name }} {{ instructor.last_name }}{% if not forloop.last %}, {% endif %}
+                                        {% empty %}
+                                            None
+                                        {% endfor %}
+                                    </p>
+
+                                    <p class="course-prices">
+                                        <span class="original-price">₹{{ course.original_price }}</span>
+                                        <span class="discount-price">₹{{ course.discount_price }}</span>
+                                    </p>
+
+                                    <div class="course-buttons">
+                                        {% if course.title in user_purchases or request.user.is_superuser or request.user.is_staff %}
+                                            <a href="{% url 'course_data' course.slug %}" class="view-btn">View</a>
+                                        {% else %}
+                                            <a href="{% url 'buy_now' course.slug %}" class="buy-now-btn">Buy Now</a>
+                                            <a href="{% url 'course_data' course.slug %}" class="view-btn">View</a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <button class="move-btn right-btn" onclick="scrollCourses('right', '{{ category.id }}')">→</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+{% endif %}
+
+{% block script %}
+<script src="{% static 'js/Course_Categories_and_Courses.js' %}"></script>
+{% endblock script %}
+{% endblock %}

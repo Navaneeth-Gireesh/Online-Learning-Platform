@@ -1,0 +1,66 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Sub Sections
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Sub_Sections/All_Sub_Sections_Styles.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<!-- Breadcrumb Navigation Container -->
+<div class="breadcrumb-container">
+    <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb-nav">
+            <li class="breadcrumb-item">
+                <a href="{% url 'all_languages' %}" class="breadcrumb-link">Languages</a>
+            </li>
+            <li class="breadcrumb-item">
+                <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <a href="{% url 'admin_language_course_category_view' section_selected.language.slug %}" class="breadcrumb-link">Categories</a>
+            </li>
+            <li class="breadcrumb-item">
+                <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <a href="{% url 'admin_course_view' section_selected.category.slug %}" class="breadcrumb-link">Courses</a>
+            </li>
+            <li class="breadcrumb-item">
+                <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <a href="{% url 'admin_course_section_view' section_selected.course.slug %}" class="breadcrumb-link">Section</a>
+            </li>
+            <li class="breadcrumb-item">
+                <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+                <span class="breadcrumb-current">Sub Section</span>
+            </li>
+        </ol>
+    </nav>
+</div>
+
+{% if user.is_authenticated and user.is_superuser %}
+    <div class="sub-sections-container">
+        <h2 class="sub-sections-title">{{ section_selected }} - Sub Sections</h2>
+        <a href="{% url 'admin_course_sub_section_create' section_selected.slug  %}" class="add-sub-section-button">Add A New Sub Section</a>
+        {% for sub_section in sub_section_selected %}
+            <div class="sub-section-card">
+                <div class="sub-section-details">
+                    <h3 class="sub-section-title">{{ sub_section.title }}</h3>
+                    <p class="sub-section-order">Order: {{ sub_section.order }}</p>
+                    <div class="sub-section-actions">
+                        <a href="{% url 'admin_course_sub_section_edit' sub_section.slug %}" class="edit-sub-section-button">Edit</a>
+                        <a href="{% url 'admin_course_sub_section_delete' sub_section.slug %}" class="delete-sub-section-button" onclick="return confirm('Are you sure you want to delete?');">Delete</a>
+                    </div>
+                    <div class="sub-section-resources">
+                        <a href="{% url 'admin_course_quiz_view' sub_section.slug %}" class="sub-section-quiz-link">Quiz</a>
+                        <a href="{% url 'admin_course_video_view' sub_section.slug %}" class="sub-section-videos-link">Videos</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p class="no-sub-sections-message">No sub sections available for {{ section_selected }} Section. Create a Sub Section.</p>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% endblock content %}

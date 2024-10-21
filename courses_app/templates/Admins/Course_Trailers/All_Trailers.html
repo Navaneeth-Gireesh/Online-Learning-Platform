@@ -1,0 +1,77 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Course Trailers
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Admins/Course_Trailer/All_Trailers_Styles.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+
+{% if user.is_authenticated and user.is_superuser %}
+
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb">
+    <ol class="breadcrumb-nav">
+        <li class="breadcrumb-item">
+            <a href="{% url 'all_languages' %}" class="breadcrumb-link">Languages</a>
+        </li>
+        <li class="breadcrumb-item">
+            <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+            <a href="{% url 'admin_language_course_category_view' course_selected.language.slug %}" class="breadcrumb-link">Categories</a>
+        </li>
+        <li class="breadcrumb-item">
+            <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+            <a href="{% url 'admin_course_view' course_selected.category.slug %}" class="breadcrumb-link">Courses</a>
+        </li>
+        <li class="breadcrumb-item">
+            <span class="breadcrumb-separator" aria-hidden="true">&gt;</span>
+            <span class="breadcrumb-current">Course Trailers</span>
+        </li>
+    </ol>
+</nav>
+
+<div class="course-trailers-wrapper">
+    <h2 class="trailers-title">{{ course_selected }} Trailers</h2>
+    <a href="{% url 'admin_course_trailer_create' course_selected.slug %}" class="add-trailer-link">Add A New Trailer</a>
+    {% for trailer in course_trailers %}
+        <div class="trailer-card">
+            <a href="#" class="trailer-card-link">
+                <video class="trailer-video" 
+                       id="videoPlayer"
+                       src="{{ trailer.video_file }}"
+                       controls 
+                       controlslist="nodownload"
+                       poster="{{ trailer.thumbnail }}">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="trailer-info">
+                    <h3 class="trailer-title">{{ trailer.title }}</h3>
+                    <p class="trailer-order">Order: {{ trailer.order }}</p>
+                    <div class="trailer-actions">
+                        <a href="{% url 'admin_course_trailer_edit' trailer.slug %}" class="edit-trailer-link">Edit</a>
+                        <a href="{% url 'admin_course_trailer_delete' trailer.slug %}" class="delete-trailer-link" onclick="return confirm('Are you sure you want to Delete?');">Delete</a>
+                    </div>
+                </div>
+            </a>
+        </div>
+    {% empty %}
+        <h5 class="no-trailer-message">No Trailers for {{ course_selected }} Course. Create a Trailer</h5>
+    {% endfor %}
+</div>
+
+{% endif %}
+
+{% endblock content %}
+
+
+
+
+
+
+
+

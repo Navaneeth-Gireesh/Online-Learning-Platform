@@ -1,0 +1,24 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Consultation Mail Success
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/success._styles.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<div class="consultation-success-container">
+    <h2 class="success-title">Expert Advice Email Success</h2>
+    <p class="success-message">Thank you for reaching out to us! We have received your request for a free Expert Advice Call.
+    Our team will review your details and get in touch with you shortly to schedule your consultation.</p>
+    <a href="{% url 'index' %}" class="home-button">Go Home</a>
+</div>
+{% block script %}
+
+{% endblock script %}
+{% endblock content %}
+

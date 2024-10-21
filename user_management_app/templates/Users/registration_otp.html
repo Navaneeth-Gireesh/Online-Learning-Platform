@@ -1,0 +1,21 @@
+{% extends 'core_app/base.html' %}
+{% load static %}
+
+{% block title %}
+Registration OTP
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/Registration_OTP_Styles.css' %}">
+{% endblock style %}
+
+{% block content %}
+<h3 class="otp-title">Enter One Time Password</h3>
+<form action="" method="post">
+    {% csrf_token %}
+    {{otp_form}}
+    <button type="submit">Verify OTP</button>
+</form>
+
+
+{% endblock content %}
